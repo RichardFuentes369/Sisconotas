@@ -1,0 +1,39 @@
+<table border="0" class="table table-responsive table-hover" style="text-align: center">
+	<thead class="tableth">
+		<th>DNI</th>
+		<th>Nombre</th>
+		<th>Colegio</th>
+		<th colspan="3">Opciónes</th>
+	</thead>
+	<tbody>
+		@foreach ($alumnos as $alumno)
+			<tr>
+				<td>{{ $alumno -> dni }}</td>
+				<td>{{ $alumno -> name }}<br>{{ $alumno -> lastname }}</td>
+				<td>{{ $alumno -> colegios -> razon_social }}</td>
+				<td>
+					<form action="{{ url('secretario')}}/{{ 'alumnosv' }}/{{ $alumno -> dni }}" method="Get">
+						<button class="btn btn-primary btn-sm">
+							<i class="material-icons">visibility</i>
+						</button>
+					</form>
+				</td>
+				<td>
+					<form action="{{ url('secretario')}}/{{ 'alumnosa' }}/{{ $alumno -> dni }}" method="Get">
+						<button class="btn btn-warning btn-sm">
+							<i class="material-icons">cached</i>
+						</button>
+					</form>
+				</td>
+				<td>
+					<form action="{{ url('secretario')}}/{{ 'alumnosb' }}/{{ $alumno -> dni }}" method="Get">
+						<button class="btn btn-danger btn-sm" onClick="javascript: return confirm('¿Esta segudo que desea eliminar el alumno con DNI {{ $alumno -> dni }}?');">
+							<i class="material-icons">delete_sweep</i>
+						</button>
+					</form>
+				</td>
+			</tr>
+		@endforeach
+	</tbody>	
+</table>		
+{!! $alumnos->render() !!}	

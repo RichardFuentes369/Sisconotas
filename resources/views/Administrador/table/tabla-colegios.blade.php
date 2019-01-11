@@ -1,0 +1,39 @@
+<table border="0" class="table table-responsive table-hover" style="text-align: center">
+	<thead class="tableth">
+		<th>Nit</th>
+		<th>Razón Social</th>
+		<th>Correo</th>
+		<th colspan="3">Opciónes</th>
+	</thead>
+	<tbody>
+		@foreach ($colegios as $colegio)
+			<tr>
+				<td>{{ $colegio -> nit }}</td>
+				<td>{{ $colegio -> razon_social }}</td>
+				<td>{{ $colegio -> correo }}</td>
+				<td>
+					<form action="{{ url('administrador')}}/{{ 'colegiosv' }}/{{ $colegio -> nit }}" method="Get">
+						<button class="btn btn-primary btn-sm">
+							<i class="material-icons">visibility</i>
+						</button>
+					</form>
+				</td>				
+				<td>
+					<form action="{{ url('administrador')}}/{{ 'colegiosa' }}/{{ $colegio -> nit }}" method="Get">
+						<button class="btn btn-warning btn-sm">
+							<i class="material-icons">cached</i>
+						</button>
+					</form>
+				</td>
+				<td>
+					<form action="{{ url('administrador')}}/{{ 'colegiosb' }}/{{ $colegio -> nit }}" method="Get">
+						<button class="btn btn-danger btn-sm" onClick="javascript: return confirm('¿Esta segudo que desea eliminar el colegio con NIT {{ $colegio -> nit }}?');">
+							<i class="material-icons">delete_sweep</i>
+						</button>
+					</form>
+				</td>
+			</tr>
+		@endforeach
+	</tbody>	
+</table>		
+{!! $colegios->render() !!}	

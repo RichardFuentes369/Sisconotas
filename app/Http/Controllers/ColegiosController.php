@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\DB;
 use sisconotas\Colegios;
 use sisconotas\User;
 use sisconotas\Anhos;
-use sisconotas\Grupos;
 use sisconotas\Grados;
 use Laracasts\Flash\Flash;
 use Auth;

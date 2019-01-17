@@ -18,6 +18,12 @@
 		</div>
 		<div class="col-sm-12">
 			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+					@include('flash::message')
+					@include('Secretario.table.tabla-materias')
+				</div>	
+				<div class="col-sm-2"></div>		
 			</div>
 		</div>
 	</div>

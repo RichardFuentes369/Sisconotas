@@ -19,9 +19,9 @@
 					</form>
 				</td>
 				<td>
-					<form action="{{ url('secretario')}}/{{'anhosa'}}/{{ $anho -> id }}" method="Get">
-						<button class="btn btn-warning btn-sm">
-							<i class="material-icons">cached</i>
+					<form action="{{ url('secretario')}}/{{ 'fechasa' }}/{{ $anho -> id }}/{{ $anho -> anho }}" method="Get">
+						<button class="btn btn-success btn-sm">
+							<i class="material-icons">calendar_today</i>	
 						</button>
 					</form>
 				</td>

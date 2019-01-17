@@ -16,6 +16,14 @@ class CreateAnhosTable extends Migration
         Schema::create('anhos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('anho');
+            $table->date('fiprimersemestre');
+            $table->date('ffprimersemestre');
+            $table->date('fisegundosemestre');
+            $table->date('ffsegundosemestre');
+            $table->date('fitercersemestre');
+            $table->date('fftercersemestre');
+            $table->date('ficuartosemestre');
+            $table->date('ffcuartosemestre');
             $table->integer('colegio_id')->unsigned();
             $table->foreign('colegio_id')
                   ->references('id')

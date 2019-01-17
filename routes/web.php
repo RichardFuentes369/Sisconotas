@@ -110,6 +110,7 @@
 		Route::post('profesoresc','UsersController@registrarPS');		
 		Route::get('profesoresa/{dni}', 'UsersController@profesorAS')->where(['id' => '[0-9]+']);
 		Route::post('profesoresado','UsersController@actualizarPS');
+		Route::get('profesoresb/{dni}', 'UsersController@borrarPS')->where(['dni' => '[0-9A-Za-z]+']);
 		Route::get('alumnosl','ColegiosController@listarAS');
 		Route::get('alumnosv/{dni}', 'UsersController@verAS')->where(['dni' => '[0-9A-Za-z]+']);
 		Route::post('alumnosc','UsersController@registrarAS');		
@@ -118,15 +119,17 @@
 		Route::get('alumnosb/{id}', 'UsersController@borrarAS')->where(['id' => '[0-9]+']);
 		Route::get('anhosl','ColegiosController@listarCAS');
 		Route::post('anhosc','AnhosController@registrarAS');		
-		Route::get('anhosa/{id}', 'AnhosController@anhoAS')->where(['id' => '[0-9]+']);
-		Route::post('anhosado','AnhosController@actualizarAS');
+		Route::get('fechasa/{id}/{anho}', 'AnhosController@fechacorteAS')->where(['id' => '[0-9]+']);
+		Route::post('fechasado','AnhosController@actualizarAS');
 		Route::get('anhosb/{id}', 'AnhosController@borrarAS')->where(['id' => '[0-9]+']);
-		/*Cursos*/
 		Route::get('cursosv/{id}/{anho}','ColegiosController@listarCS');
 		Route::post('cursosc','CursosController@registrarCS');	
 		Route::get('cursosa/{id}', 'CursosController@alumnoAS')->where(['id' => '[0-9]+']);
 		Route::post('cursosado','CursosController@actualizarAS');
 		Route::get('cursosb/{id}', 'CursosController@borrarAS')->where(['id' => '[0-9]+']);
+		Route::get('alumnosv/{anho}/{grupo}/{id}','AgrupacionController@listarAC');
+		Route::post('agregara','AgrupacionController@registrarAC');
+		Route::get('materiasl/{var}','MateriasController@listarMS');
 	});
 
 	Route::group(['prefix'=>'profesor', 'middleware' => 'auth'], function(){	
@@ -158,3 +161,4 @@
 			return view('Alumno.views.ajustes');
 		});
 	});
+

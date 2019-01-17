@@ -1,27 +1,22 @@
 <table border="0" class="table table-responsive table-hover" style="text-align: center">
 	<thead class="tableth">
 		<th>ID</th>
-		<th>Grado</th>
-		<th>Colegio</th>
+		<th>Nombre</th>
+		<th>Apellido</th>
+		<th>DNI</th>
 		<th colspan="3">Opciónes</th>
 	</thead>
 	<tbody>
-		@foreach ($curso as $cursos)
+		@foreach ($listagrupo as $lista)
 			<tr>
-				<td>{{ $cursos -> id }}</td>
-				<td>{{ $cursos -> nombre }}</td>
-				<td>{{ $cursos -> anhos -> colegios -> razon_social }}</td>
-				<td>
-					<form action="{{ url('secretario')}}/{{ 'alumnosv' }}/{{ $cursos -> anhos -> anho }}/{{ $cursos -> nombre }}/{{ $cursos -> id }}" method="Get">
-						<button class="btn btn-primary btn-sm">
-							<i class="material-icons">visibility</i>
-						</button>
-					</form>
-				</td>
+				<td>{{ $lista ->  id}}</td>
+				<td>{{ $lista ->  nombre_alumno}}</td>
+				<td>{{ $lista ->  apellido_alumno}}</td>
+				<td>{{ $lista ->  dni}}</td>
 				<td>
 					<form action="#" method="Get">
-						<button class="btn btn-warning btn-sm">
-							<i class="material-icons">cached</i>
+						<button class="btn btn-primary btn-sm">
+							<i class="material-icons">visibility</i>
 						</button>
 					</form>
 				</td>
@@ -35,6 +30,4 @@
 			</tr>
 		@endforeach
 	</tbody>	
-</table>		
-{!! $curso->render() !!}	
-
+</table>

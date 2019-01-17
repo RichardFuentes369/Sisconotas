@@ -3,7 +3,7 @@
 		<th>DNI</th>
 		<th>Nombre</th>
 		<th>Colegio</th>
-		<th colspan="2">Opciónes</th>
+		<th colspan="3">Opciónes</th>
 	</thead>
 	<tbody>
 		@foreach ($profesores as $profesor)
@@ -22,6 +22,13 @@
 					<form action="{{ url('secretario')}}/{{ 'profesoresa' }}/{{ $profesor -> dni }}" method="Get">
 						<button class="btn btn-warning btn-sm">
 							<i class="material-icons">cached</i>
+						</button>
+					</form>
+				</td>				
+				<td>
+					<form action="{{ url('secretario')}}/{{ 'profesoresb' }}/{{ $profesor -> dni }}" method="Get">
+						<button class="btn btn-danger btn-sm" onClick="javascript: return confirm('¿Esta segudo que desea eliminar el profesor con dni: {{ $profesor -> dni }}?');">
+							<i class="material-icons">delete_sweep</i>
 						</button>
 					</form>
 				</td>

@@ -38,7 +38,7 @@
 									<a href="{{ url('secretario')}}/{{ 'profesoresl' }}" class="fontGhoti"><i class="material-icons">supervisor_account</i> Profesores</a><br>
 									<a href="{{ url('secretario')}}/{{ 'alumnosl' }}" class="fontGhoti"><i class="material-icons">supervisor_account</i> Alumnos</a><br>
 									<a href="{{ url('secretario')}}/{{ 'anhosl' }}" class="fontGhoti"><i class="material-icons">calendar_today	</i> Años</a><br>
-									<a href="{{ url('secretario')}}/{{ 'materiasl' }}" class="fontGhoti"><i class="material-icons">list</i> Materias</a><br>
+									<a href="{{ url('secretario')}}/{{ 'materiasl' }}/{{ Auth::user()->colegios->id }}" class="fontGhoti"><i class="material-icons">list</i> Materias</a><br>
 									<a href="{{ url('secretario')}}/{{ 'ajustes' }}" class="fontGhoti"><i class="material-icons">settings</i> Ajustes</a><br>
 									<hr>
 					        		{!! Form::open(['url' => 'Logout']) !!}

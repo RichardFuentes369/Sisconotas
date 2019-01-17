@@ -29,10 +29,10 @@ class CursosController extends Controller
             $g->anho_id = $request->input('id');
             $g->save();
             Flash::success("Se ha registrado el grupo: ".$g->nombre." del año ".$g->Anhos->anho." </br>de forma correcta");
-            return redirect('secretario/anhosl');
+            return back();
         }else{
             Flash::error("El grupo: ".$grupo. " ya existe");
-            return redirect('secretario/anhosl');            
+            return back();            
         }
     }   
 }

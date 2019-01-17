@@ -270,5 +270,10 @@ class UsersController extends Controller
         Flash::error("Se ha eliminado el usuario con cc " . $dni . " de forma correcta");
         return redirect('secretario/alumnosl');
     }
+    public function borrarPS($dni){
+        $existe = DB::DELETE('DELETE FROM Users WHERE dni = :vardni',['vardni' => $dni]);
+        Flash::error("Se ha eliminado el profesor con DNI: " . $dni . " de forma correcta");
+        return redirect('secretario/profesoresl');
+    }
     
 }

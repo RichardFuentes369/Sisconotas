@@ -53,6 +53,20 @@ class colegios extends Model
     public function colegio3(){
         return $this->hasOne('sisconotas\Anho');
     }
+
+    /**
+     * De Materias a Colegio recivo
+     */
+    public function colegio4(){
+        return $this->belongsTo('sisconotas\Colegios');
+    }
+
+    /**
+     * De Colegio a Materias envio
+     */
+    public function materias(){
+        return $this->hasOne('sisconotas\Materias');
+    }   
     
 
 

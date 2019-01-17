@@ -6,10 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class anhos extends Model
 {
-     protected $table = "anhos";
+    protected $table = "anhos";
 
     protected $fillable = [
         'id','anho','colegio_id',
+        'fiprimersemestre',
+        'ffprimersemestre',
+        'fisegundosemestre',
+        'ffsegundosemestre',
+        'fitercersemestre',
+        'fftercersemestre',
+        'ficuartosemestre',
+        'ffcuartosemestre',
     ];
 
     /**
@@ -40,7 +48,4 @@ class anhos extends Model
         return $this->hasOne('sisconotas\Grados');
     }  
     
-
-    
-
 }

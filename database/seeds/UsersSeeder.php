@@ -14,15 +14,15 @@ class UsersSeeder extends Seeder
     {
         $user1 = User::create([
     		    'id'		=> 1,
-            'name'      => 'Prueba',
-    		    'lastname'		=> 'Admininstrador',
+            'name'      => 'Javier Ricardo',
+    		    'lastname'		=> 'Baron Fuentes',
             'email' => 'prueba1@gmail.com',
             'birthdate' => '1996-06-01',
-            'dni' => '111111111111',
+            'dni' => '1098634578',
             'sexo' => 'M',
             'category' => 'administrador',
-    		    'phone'	=> '6390751',
-    		    'cellphone'	=> '3203897291',
+    		    'phone'	=> '6387596',
+    		    'cellphone'	=> '3226589746',
             'colegio_id' => 0,
     		]);
 
@@ -30,15 +30,15 @@ class UsersSeeder extends Seeder
 
         $user2 = User::create([
            'id'        => 2,
-           'name'      => 'Prueba',
-           'lastname'      => 'Rector 1',
+           'name'      => 'Jorge Enrique',
+           'lastname'      => 'Baron Fuentes',
            'email' => 'prueba2@gmail.com',
            'birthdate' => '1996-06-01',
-           'dni' => '222222222222',
+           'dni' => '1098987548',
            'sexo' => 'M',
            'category' => 'rector',
-           'phone' => '6390752',
-           'cellphone' => '3203897292',
+           'phone' => '6387452',
+           'cellphone' => '3209687854',
            'colegio_id' => 1,
            ]);
 
@@ -46,15 +46,15 @@ class UsersSeeder extends Seeder
 
         $user3 = User::create([
            'id'        => 3,
-           'name'      => 'Prueba',
-           'lastname'      => 'Secretaria 1',
+           'name'      => 'Jorge Enrique',
+           'lastname'      => 'Baron Robles',
            'email' => 'prueba3@gmail.com',
            'birthdate' => '1996-06-01',
-           'dni' => '333333333333',
+           'dni' => '1098987546',
            'sexo' => 'M',
            'category' => 'secretario',
-           'phone' => '6390753',
-           'cellphone' => '3203897293',
+           'phone' => '6578423',
+           'cellphone' => '3112548761',
            'colegio_id' => 1,
            ]);
 
@@ -62,15 +62,15 @@ class UsersSeeder extends Seeder
 
          $user4 = User::create([
             'id'        => 4,
-            'name'      => 'Prueba',
-            'lastname'      => 'Profesor 1',
+            'name'      => 'Bettsy',
+            'lastname'      => 'Fuentes Porras',
             'email' => 'prueba4@gmail.com',
             'birthdate' => '1996-06-01',
-            'dni' => '444444444444',
+            'dni' => '1098524478',
             'sexo' => 'M',
             'category' => 'profesor',
-            'phone' => '6390754',
-            'cellphone' => '3203897294',
+            'phone' => '6588799',
+            'cellphone' => '3168574889',
             'colegio_id' => 1,
             ]);
 
@@ -78,31 +78,47 @@ class UsersSeeder extends Seeder
 
         $user5 = User::create([
            'id'        => 5,
-           'name'      => 'Prueba',
-           'lastname'      => 'Estudiante 1',
+           'name'      => 'Mark',
+           'lastname'      => 'Zuckerberg Sinisterra',
            'email' => 'prueba5@gmail.com',
            'birthdate' => '1996-06-01',
-           'dni' => '555555555555',
+           'dni' => '1098751248',
            'sexo' => 'M',
            'category' => 'alumno',
-           'phone' => '6390755',
-           'cellphone' => '3203897295',
+           'phone' => '6390852',
+           'cellphone' => '3203687952',
            'colegio_id' => 1,
            ]);
 
         $user5->save();
 
+        $user10 = User::create([
+           'id'        => 10,
+           'name'      => 'Alan',
+           'lastname'      => 'Turing',
+           'email' => 'prueba10@gmail.com',
+           'birthdate' => '1996-06-01',
+           'dni' => '10987512428',
+           'sexo' => 'M',
+           'category' => 'alumno',
+           'phone' => '6390852',
+           'cellphone' => '3203687952',
+           'colegio_id' => 1,
+           ]);
+
+        $user10->save();
+
         $user6 = User::create([
            'id'        => 6,
-           'name'      => 'Prueba',
-           'lastname'      => 'Rector 2',
+           'name'      => 'Eliot',
+           'lastname'      => 'Bautista Jaimes',
            'email' => 'prueba6@gmail.com',
            'birthdate' => '1996-06-01',
-           'dni' => '666666666666',
+           'dni' => '1098364258',
            'sexo' => 'M',
            'category' => 'rector',
-           'phone' => '6390756',
-           'cellphone' => '3203897296',
+           'phone' => '6852200',
+           'cellphone' => '3208756325',
            'colegio_id' => 2,
            ]);
 
@@ -110,15 +126,15 @@ class UsersSeeder extends Seeder
 
         $user7 = User::create([
            'id'        => 7,
-           'name'      => 'Prueba',
-           'lastname'      => 'Secretaria 2',
+           'name'      => 'Henry',
+           'lastname'      => 'Ford Mustang',
            'email' => 'prueba7@gmail.com',
            'birthdate' => '1996-06-01',
-           'dni' => '777777777777',
+           'dni' => '1098763254',
            'sexo' => 'M',
            'category' => 'secretario',
-           'phone' => '6390757',
-           'cellphone' => '3203897297',
+           'phone' => '6395893',
+           'cellphone' => '3203658964',
            'colegio_id' => 2,
            ]);
 
@@ -126,15 +142,15 @@ class UsersSeeder extends Seeder
 
          $user8 = User::create([
             'id'        => 8,
-            'name'      => 'Prueba',
-            'lastname'      => 'Profesor 2',
+            'name'      => 'Dennis',
+            'lastname'      => 'Buenaventura Solis',
             'email' => 'prueba8@gmail.com',
             'birthdate' => '1996-06-01',
-            'dni' => '888888888888',
+            'dni' => '1095632578',
             'sexo' => 'M',
             'category' => 'profesor',
-            'phone' => '6390758',
-            'cellphone' => '3203897298',
+            'phone' => '6632008',
+            'cellphone' => '3013256964',
             'colegio_id' => 2,
             ]);
 
@@ -142,15 +158,15 @@ class UsersSeeder extends Seeder
 
         $user9 = User::create([
            'id'        => 9,
-           'name'      => 'Prueba',
-           'lastname'      => 'Estudiante 2',
+           'name'      => 'Felix',
+           'lastname'      => 'Quintero Agames',
            'email' => 'prueba9@gmail.com',
            'birthdate' => '1996-06-01',
-           'dni' => '999999999999',
+           'dni' => '124785789',
            'sexo' => 'M',
            'category' => 'alumno',
-           'phone' => '6390759',
-           'cellphone' => '3203897299',
+           'phone' => '6390000',
+           'cellphone' => '3203589979',
            'colegio_id' => 2,
            ]);
 

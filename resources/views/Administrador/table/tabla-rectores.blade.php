@@ -2,6 +2,7 @@
 	<thead class="tableth">
 		<th>DNI</th>
 		<th>Nombre</th>
+		<th>Apellidos</th>
 		<th>Colegio</th>
 		<th>Correo</th>
 		<th colspan="3">Opciónes</th>
@@ -10,7 +11,7 @@
 		@foreach ($rectores as $rector)
 			<tr>
 				<td>{{ $rector -> dni }}</td>
-				<td>{{ $rector -> name }} <br> {{ $rector -> lastname }}</td>
+				<td>{{ $rector -> name }} {{ $rector -> lastname }}</td>
 				<td>{{ $rector -> colegios -> razon_social }}</td>
 				<td>{{ $rector -> email }}</td>
 				<td>

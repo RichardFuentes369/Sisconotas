@@ -1,4 +1,4 @@
-{!! Form::open(['url' => 'secretario/agregara']) !!}
+{!! Form::open(['url' => 'secretario/agrupaciona']) !!}
 	{{ csrf_field() }}
 	<center>
 		<div class="col-sm-12"><br>
@@ -20,7 +20,7 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-            	{{ Form::submit('Agregar',array('class'=>'btn btn-success')) }}
+            	{{ Form::submit('Agregar',array('class'=>'btn btn-success botonejecutarfuncion')) }}
 		    </div>
 		</div>
 	</center>

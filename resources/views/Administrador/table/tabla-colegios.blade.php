@@ -13,21 +13,21 @@
 				<td>{{ $colegio -> correo }}</td>
 				<td>
 					<form action="{{ url('administrador')}}/{{ 'colegiosv' }}/{{ $colegio -> nit }}" method="Get">
-						<button class="btn btn-primary btn-sm">
+						<button class="btn btn-primary btn-sm botonfunciones" title="Ver">
 							<i class="material-icons">visibility</i>
 						</button>
 					</form>
 				</td>				
 				<td>
 					<form action="{{ url('administrador')}}/{{ 'colegiosa' }}/{{ $colegio -> nit }}" method="Get">
-						<button class="btn btn-warning btn-sm">
+						<button class="btn btn-warning btn-sm botonfunciones" title="Actualizar">
 							<i class="material-icons">cached</i>
 						</button>
 					</form>
 				</td>
 				<td>
 					<form action="{{ url('administrador')}}/{{ 'colegiosb' }}/{{ $colegio -> nit }}" method="Get">
-						<button class="btn btn-danger btn-sm" onClick="javascript: return confirm('¿Esta segudo que desea eliminar el colegio con NIT {{ $colegio -> nit }}?');">
+						<button class="btn btn-danger btn-sm botonfunciones" title="Eliminar" onClick="javascript: return confirm('¿Esta segudo que desea eliminar el colegio con NIT {{ $colegio -> nit }}?');">
 							<i class="material-icons">delete_sweep</i>
 						</button>
 					</form>

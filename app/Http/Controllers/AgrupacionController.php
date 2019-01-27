@@ -46,4 +46,11 @@ class AgrupacionController extends Controller
         Flash::success("Se ha registrado el año: ".$a->anho. " de forma correcta");
         return back();
     }   
+
+    /*borrar alumno del curso*/
+    public function borrarAC($id){
+        $existe = DB::DELETE('DELETE FROM agrupacions WHERE id = :varid',['varid' => $id]);
+        Flash::error("Se ha eliminado el estudiante con id " . $id . " de forma correcta");
+        return back();
+    }   
 }

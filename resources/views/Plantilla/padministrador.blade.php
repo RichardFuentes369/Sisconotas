@@ -11,9 +11,9 @@
 	<title>@yield('title')</title>
 	{{ Html::style('css/index.css') }}
   </head>
-  <body style="background-color: #D5C6C3">
+  <body class="background">
 
-  	<div class="header">
+  	<div class="header subir">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		  <h3><a href="{{ url('administrador')}}/{{ 'bienvenido' }}"><i class="fonttitle">Sisconotas</i></a></h3>
 		</nav>
@@ -29,21 +29,30 @@
 						<div class="card">
 							<div class="containe">
 								<div class="col-sm-1"></div>
-								<div class="col-sm 2">
+								<div class="col-sm 2 menu">
 									<br>
 									<h4>Menú Administrador</h4>
 									<h5>{{ Auth::user()->email }}</h5>
 									<hr>
 									<a href="{{ url('administrador')}}/{{ 'colegiosl' }}" class="fontGhoti"><i class="material-icons">account_balance</i> Colegios</a><br>
 									<a href="{{ url('administrador')}}/{{ 'rectoresl' }}" class="fontGhoti"><i class="material-icons">people</i> Rectores</a><br>
-									<a href="{{ url('administrador')}}/{{ 'porcentajesl' }}" class="fontGhoti"><i class="material-icons">gavel</i> Porcentajes</a><br>
-									<a href="{{ url('administrador')}}/{{ 'ajustes' }}" class="fontGhoti"><i class="material-icons">settings</i> Ajustes</a><br>
+									<a href="{{ url('administrador')}}/{{ 'porcentajesl' }}" class="fontGhoti"><i class="material-icons">gavel</i> Porcentajes</a>
 									<hr>
-					        		{!! Form::open(['url' => 'Logout']) !!}
-										{{ csrf_field() }}
-										{{ Form::submit('Salir',array('class'=>'btn btn-danger btn-block')) }}
-									{!! Form::close() !!}
-									<br>
+									<div class="col-sm-12">
+										<div class="row">
+											<div class="col-sm-6">
+												{!! Form::open(['url' => 'administrador/ajustes', 'method'=>'GET'])!!}
+													{{ Form::submit('settings',array('class'=>'btn btn-secondary btn-block material-icons', 'title'=>'Ajustes')) }}
+												{!! Form::close() !!}
+											</div>
+											<div class="col-sm-6">
+								        		{!! Form::open(['url' => 'Logout']) !!}
+													{{ csrf_field() }}
+														{{ Form::submit('power_settings_new',array('class'=>'btn btn-secondary btn-block material-icons', 'title'=>'Salir')) }}
+												{!! Form::close() !!}
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -74,3 +83,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
+

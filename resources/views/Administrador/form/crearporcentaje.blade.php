@@ -44,7 +44,7 @@
 				</div>
 			</div>
             <div class="modal-footer">
-            	{{ Form::submit('Agregar',array('class'=>'btn btn-success')) }}
+            	{{ Form::submit('Agregar',array('class'=>'btn btn-success botonejecutarfuncion')) }}
 		    </div>
 		</div>
 	</center>

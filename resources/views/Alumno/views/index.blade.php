@@ -1,5 +1,5 @@
 @extends('Plantilla.palumno')
-
+<br>
 @section('content')
 	<div class="container">
 		<br>

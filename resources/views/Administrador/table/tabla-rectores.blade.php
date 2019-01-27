@@ -16,21 +16,21 @@
 				<td>{{ $rector -> email }}</td>
 				<td>
 					<form action="{{ url('administrador')}}/{{ 'rectoresv' }}/{{ $rector -> dni }}" method="Get">
-						<button class="btn btn-primary btn-sm">
+						<button class="btn btn-primary btn-sm botonfunciones" title="Ver">
 							<i class="material-icons">visibility</i>
 						</button>
 					</form>
 				</td>
 				<td>
 					<form action="{{ url('administrador')}}/{{ 'rectoresa' }}/{{ $rector -> dni }}" method="Get">
-						<button class="btn btn-warning btn-sm">
+						<button class="btn btn-warning btn-sm botonfunciones" title="Actualizar">
 							<i class="material-icons">cached</i>
 						</button>
 					</form>
 				</td>
 				<td>
 					<form action="{{ url('administrador')}}/{{ 'rectoresb' }}/{{ $rector -> dni }}" method="Get">
-						<button class="btn btn-danger btn-sm" onClick="javascript: return confirm('¿Esta seguro que desea eliminar el usuario con DNI {{ $rector -> dni }}?');">
+						<button class="btn btn-danger btn-sm botonfunciones" title="Eliminar" onClick="javascript: return confirm('¿Esta seguro que desea eliminar el usuario con DNI {{ $rector -> dni }}?');">
 							<i class="material-icons">delete_sweep</i>	
 						</button>
 					</form>

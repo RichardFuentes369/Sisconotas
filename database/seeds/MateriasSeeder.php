@@ -12,7 +12,7 @@ class MateriasSeeder extends Seeder
      */
     public function run()
     {
-        $materias1 = Materias::create([
+        /**$materias1 = Materias::create([
             'id' => 1,
     		'nombre_materia' => 'Español',
     		'colegio_id' => 1,
@@ -24,6 +24,6 @@ class MateriasSeeder extends Seeder
             'nombre_materia' => 'Matematicas',
             'colegio_id' => 2,
         ]);
-        $materias2->save(); 
+        $materias2->save(); **/
     }
 }

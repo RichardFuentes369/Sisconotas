@@ -126,9 +126,10 @@
 		Route::post('cursosc','CursosController@registrarCS');	
 		Route::get('cursosa/{id}', 'CursosController@alumnoAS')->where(['id' => '[0-9]+']);
 		Route::post('cursosado','CursosController@actualizarAS');
-		Route::get('cursosb/{id}', 'CursosController@borrarAS')->where(['id' => '[0-9]+']);
+		Route::get('cursosb/{id}', 'CursosController@borrarCS')->where(['id' => '[0-9]+']);
 		Route::get('alumnosv/{anho}/{grupo}/{id}','AgrupacionController@listarAC');
-		Route::post('agregara','AgrupacionController@registrarAC');
+		Route::post('agrupaciona','AgrupacionController@registrarAC');
+		Route::get('agrupacionb/{id}', 'AgrupacionController@borrarAC')->where(['id' => '[0-9]+']);
 		Route::get('materiasl/{var}','MateriasController@listarMS');
 	});
 

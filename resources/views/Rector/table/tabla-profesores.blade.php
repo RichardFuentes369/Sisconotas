@@ -13,21 +13,21 @@
 				<td>{{ $profesor -> colegios -> razon_social }}</td>
 				<td>
 					<form action="{{ url('rector')}}/{{ 'profesoresv' }}/{{ $profesor -> dni }}" method="Get">
-						<button class="btn btn-primary btn-sm">
+						<button class="btn btn-primary btn-sm botonfunciones">
 							<i class="material-icons">visibility</i>
 						</button>
 					</form>
 				</td>
 				<td>
 					<form action="{{ url('rector')}}/{{ 'profesoresa' }}/{{ $profesor -> dni }}" method="Get">
-						<button class="btn btn-warning btn-sm">
+						<button class="btn btn-warning btn-sm botonfunciones">
 							<i class="material-icons">cached</i>
 						</button>
 					</form>
 				</td>
 				<td>
 					<form action="{{ url('rector')}}/{{ 'profesoresb' }}/{{ $profesor -> dni }}" method="Get">
-						<button class="btn btn-danger btn-sm" onClick="javascript: return confirm('¿Esta segudo que desea eliminar el/la secretaria(o) con DNI: {{ $profesor -> dni }}?');">
+						<button class="btn btn-danger btn-sm botonfunciones" onClick="javascript: return confirm('¿Esta segudo que desea eliminar el/la secretaria(o) con DNI: {{ $profesor -> dni }}?');">
 							<i class="material-icons">delete_sweep</i>	
 						</button>
 					</form>

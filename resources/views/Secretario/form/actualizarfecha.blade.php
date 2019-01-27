@@ -59,7 +59,7 @@
 					<div class="row">
 						<div class="col-sm-4"></div>
 						<div class="col-sm-4">
-							{{ Form::submit('Actualizar',array('class'=>'btn btn-success btn-block')) }}
+							{{ Form::submit('Actualizar',array('class'=>'btn btn-success botonejecutarfuncion')) }}
 						</div>
 						<div class="col-sm-4"></div>
 					</div>

@@ -30,7 +30,7 @@ class PorcentajesSeeder extends Seeder
             'periodo4'  => 25,
             'colegio_id' => 2,
         ]);
-        $porcentaje2->save();  
+        $porcentaje2->save();
     }
 }
 

@@ -65,7 +65,8 @@ class ColegiosController extends Controller
     /*Listar Cursos por año por secretaria*/
     public function listarCS($id,$anho){
         $curso = Grados::orderBy('id','ASC')->where('anho_id', $id )->paginate(10);
-        return view('Secretario.views.grupos',compact('anho','id'))->with('curso',$curso);
+        $profesor = User::orderBy('id','ASC')->where('category', 'profesor')->where('colegio_id',Auth::user()->Colegios->id)->paginate(10);
+        return view('Secretario.views.grupos',compact('anho','id'))->with('curso',$curso)->with('profesor',$profesor);
     }
 
     /*ver colegio*/

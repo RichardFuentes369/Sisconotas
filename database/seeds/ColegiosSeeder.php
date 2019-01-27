@@ -66,6 +66,6 @@ class ColegiosSeeder extends Seeder
             'telefono' => '6792500',
             'correo' => 'colegiometropolitanodelsur@gmail.com',
             ]);
-        $colegio3->save();
+        $colegio3->save();  
     }
 }

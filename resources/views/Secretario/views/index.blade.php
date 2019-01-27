@@ -1,5 +1,5 @@
 @extends('Plantilla.psecretario')
-
+<br>
 @section('content')
 	<div class="container">
 		<br>

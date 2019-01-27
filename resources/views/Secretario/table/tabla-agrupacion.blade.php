@@ -15,14 +15,14 @@
 				<td>{{ $lista ->  dni}}</td>
 				<td>
 					<form action="#" method="Get">
-						<button class="btn btn-primary btn-sm">
+						<button class="btn btn-primary btn-sm botonfunciones" title="Ver">
 							<i class="material-icons">visibility</i>
 						</button>
 					</form>
 				</td>
 				<td>
-					<form action="#" method="Get">
-						<button class="btn btn-danger btn-sm" onClick="javascript: return confirm('¿Esta segudo que desea eliminar el año con id ?');">
+					<form action="{{ url('secretario')}}/{{ 'agrupacionb' }}/{{ $lista -> id }}" method="Get">
+						<button class="btn btn-danger btn-sm botonfunciones" title="Eliminar" onClick="javascript: return confirm('¿Esta segudo que desea eliminar el año con id {{ $lista -> id }}');">
 							<i class="material-icons">delete_sweep</i>
 						</button>
 					</form>

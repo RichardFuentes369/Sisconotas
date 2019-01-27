@@ -16,6 +16,8 @@ class CreateGradosTable extends Migration
         Schema::create('grados', function (Blueprint $table) {
             $table->increments('id');   
             $table->string('nombre');
+            $table->string('nombre_profesor');
+            $table->string('dni_profesor'); 
             $table->integer('anho_id')->unsigned();
             $table->foreign('anho_id')
                   ->references('id')

@@ -13,7 +13,7 @@
 				<td>{{ $materia -> colegios -> razon_social }}</td>
 				<td>
 					<form action="#" method="Get">
-						<button class="btn btn-danger btn-sm" onClick="javascript: return confirm('¿Esta segudo que desea eliminar el año con id ?');">
+						<button class="btn btn-danger btn-sm botonfunciones" title="Eliminar" onClick="javascript: return confirm('¿Esta segudo que desea eliminar el año con id ?');">
 							<i class="material-icons">delete_sweep</i>
 						</button>
 					</form>

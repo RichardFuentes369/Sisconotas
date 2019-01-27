@@ -1,5 +1,5 @@
 @extends('Plantilla.prector')
-
+<br>
 @section('content')
 	<div class="container">
 		<div class="col-sm-12">
@@ -11,7 +11,7 @@
 				</div>
 				<div class="col-sm-2">
 					<br>
-					<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Añadir</button>
+					<button type="button" class="btn btn-success botonanadir" data-toggle="modal" data-target="#myModal">Añadir</button>
 				</div>
 			</div>
 			<hr>

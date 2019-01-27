@@ -1,5 +1,5 @@
 @extends('Plantilla.psecretario')
-
+<br>
 @section('content')
 	<div class="container">
 		<div class="col-sm-12">
@@ -24,7 +24,7 @@
 			<hr>
 			<form action="{{ url('secretario')}}/{{'anhosl'}}" method="Get">
 				<button class="btn btn-link btn-sm">
-					<i class="material-icons">undo</i>
+					<i class="material-icons" title="Volver">undo</i>
 				</button>
 			</form>
 			<br>

@@ -11,9 +11,9 @@
 	<title>@yield('title')</title>
 	{{ Html::style('css/index.css') }}
   </head>
-  <body style="background-color: #D5C6C3">
+  <body class="background">
 
-  	<div class="header">
+  	<div class="header subir">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		  <h3><a href="{{ url('rector')}}/{{ 'bienvenido' }}"><i class="fonttitle">Sisconotas</i></a></h3>
 		</nav>
@@ -29,7 +29,7 @@
 						<div class="card">
 							<div class="containe">
 								<div class="col-sm-1"></div>
-								<div class="col-sm 2">
+								<div class="col-sm 2 menu">
 									<br>
 									<h4>Menú Rector</h4>
 									<h5>{{ Auth::user()->email }}</h5>
@@ -37,13 +37,22 @@
 									<hr>
 									<a href="{{ url('rector')}}/{{ 'secretariasl' }}" class="fontGhoti"><i class="material-icons">supervisor_account</i> Secretarias</a><br>
 									<a href="{{ url('rector')}}/{{ 'profesoresl' }}" class="fontGhoti"><i class="material-icons">supervisor_account</i> Profesores</a><br>
-									<a href="{{ url('rector')}}/{{ 'ajustes' }}" class="fontGhoti"><i class="material-icons">settings</i> Ajustes</a><br>
 									<hr>
-					        		{!! Form::open(['url' => 'Logout']) !!}
-										{{ csrf_field() }}
-										{{ Form::submit('Salir',array('class'=>'btn btn-danger btn-block')) }}
-									{!! Form::close() !!}
-									<br>
+									<div class="col-sm-12">
+										<div class="row">
+											<div class="col-sm-6">
+												{!! Form::open(['url' => 'rector/ajustes', 'method'=>'GET'])!!}
+													{{ Form::submit('settings',array('class'=>'btn btn-secondary btn-block material-icons', 'title'=>'Ajustes')) }}
+												{!! Form::close() !!}
+											</div>
+											<div class="col-sm-6">
+								        		{!! Form::open(['url' => 'Logout']) !!}
+													{{ csrf_field() }}
+														{{ Form::submit('power_settings_new',array('class'=>'btn btn-secondary btn-block material-icons', 'title'=>'Salir')) }}
+												{!! Form::close() !!}
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

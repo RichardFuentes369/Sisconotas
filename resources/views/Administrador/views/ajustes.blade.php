@@ -1,5 +1,5 @@
 @extends('Plantilla.padministrador')
-
+<br>
 @section('content')
 	<div class="container">
 		<br>

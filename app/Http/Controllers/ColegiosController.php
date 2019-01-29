@@ -8,6 +8,7 @@ use sisconotas\Colegios;
 use sisconotas\User;
 use sisconotas\Anhos;
 use sisconotas\Grados;
+use sisconotas\Materias;
 use Laracasts\Flash\Flash;
 use Auth;
 
@@ -66,7 +67,8 @@ class ColegiosController extends Controller
     public function listarCS($id,$anho){
         $curso = Grados::orderBy('id','ASC')->where('anho_id', $id )->paginate(10);
         $profesor = User::orderBy('id','ASC')->where('category', 'profesor')->where('colegio_id',Auth::user()->Colegios->id)->paginate(10);
-        return view('Secretario.views.grupos',compact('anho','id'))->with('curso',$curso)->with('profesor',$profesor);
+        $materias = Materias::orderBy('id','ASC')->where('colegio_id',Auth::user()->Colegios->id)->paginate(10);
+        return view('Secretario.views.grupos',compact('anho','id'))->with('curso',$curso)->with('profesor',$profesor)->with('materias',$materias);
     }
 
     /*ver colegio*/

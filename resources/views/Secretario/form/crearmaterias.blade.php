@@ -1,4 +1,4 @@
-{!! Form::open(['url' => 'secretario/#']) !!}
+{!! Form::open(['url' => 'secretario/materiasc']) !!}
 	{{ csrf_field() }}
 	<center>
 		<div class="col-sm-12"><br>
@@ -9,13 +9,13 @@
 						    <span class="input-group-text" id="basic-addon1">Colegio</span>
 						</div>
 					    {{ Form::text('text', Auth::user()->colegios->id ,['class' => 'form-control', 'type' => 'name',
-					    	'name' => 'id_anho','required','readonly']) }}
+					    	'name' => 'idColegio','required','readonly']) }}
 					</div>
 					<div class="input-group mb-3">
 						<div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">Materia</span>
 						 </div>
-					    {{ Form::text('text', null ,['class' => 'form-control', 'type' => 'name', 'placeholder' => 'Quimica', 'name' => 'grupo','required']) }}
+					    {{ Form::text('text', null ,['class' => 'form-control', 'type' => 'name', 'placeholder' => 'Quimica', 'name' => 'materia','required']) }}
 					</div> 
 				</div>
 			</div>

@@ -47,7 +47,7 @@ class AnhosController extends Controller
             return redirect('secretario/anhosl');
         }else{
             Flash::error("No se pudo registrar el año: ".$anho);
-            return redirect('hola');
+            return redirect('secretario/anhosl');
         }
     }   
 

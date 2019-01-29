@@ -130,7 +130,9 @@
 		Route::get('alumnosv/{anho}/{grupo}/{id}','AgrupacionController@listarAC');
 		Route::post('agrupaciona','AgrupacionController@registrarAC');
 		Route::get('agrupacionb/{id}', 'AgrupacionController@borrarAC')->where(['id' => '[0-9]+']);
-		Route::get('materiasl/{var}','MateriasController@listarMS');
+		Route::get('materiasl','MateriasController@listarMS');
+		Route::post('materiasc','MateriasController@registrarMS');
+		Route::get('materiasb/{id}', 'MateriasController@borrarMS')->where(['id' => '[0-9]+']);
 	});
 
 	Route::group(['prefix'=>'profesor', 'middleware' => 'auth'], function(){	

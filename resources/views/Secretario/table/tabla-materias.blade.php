@@ -12,8 +12,8 @@
 				<td>{{ $materia -> nombre_materia }}</td>
 				<td>{{ $materia -> colegios -> razon_social }}</td>
 				<td>
-					<form action="#" method="Get">
-						<button class="btn btn-danger btn-sm botonfunciones" title="Eliminar" onClick="javascript: return confirm('¿Esta segudo que desea eliminar el año con id ?');">
+					<form action="{{ url('secretario')}}/{{ 'materiasb' }}/{{ $materia -> id }}" method="Get">
+						<button class="btn btn-danger btn-sm botonfunciones" title="Eliminar" onClick="javascript: return confirm('¿Esta segudo que desea eliminar el año con id {{ $materia -> id }}?');">
 							<i class="material-icons">delete_sweep</i>
 						</button>
 					</form>

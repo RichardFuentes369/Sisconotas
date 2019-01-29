@@ -27,20 +27,37 @@
 					<div class="col-sm-12">
 						<br>
 						<div class="card">
-							<div class="containe">
+							<div class="container">
 								<div class="col-sm-1"></div>
-								<div class="col-sm 2 menu">
+								<div class="menu">
 									<br>
 									<h4>Menú</h4>
 									<hr>
-									<a href="{{ url('/')}}/{{ 'index' }}/{{ 'login' }}" class="fontGhoti"><i class="material-icons">account_circle</i> Ingresar</a><br>
-									<a href="{{ url('/')}}/{{ 'index' }}/{{ 'mision-vision' }}" class="fontGhoti"><i class="material-icons">playlist_add_check</i> Misión/Visión</a><br>
-									<a href="{{ url('/')}}/{{ 'index' }}/{{ 'sobre-nosotros' }}" class="fontGhoti"><i class="material-icons">remove_red_eye</i> Sobre Nosotros</a><br>
-									<a href="{{ url('/')}}/{{ 'index' }}/{{ 'contactenos' }}" class="fontGhoti"><i class="material-icons">contacts</i> Contactenos</a><br>
+									<form action="{{ url('/')}}/{{ 'index' }}/{{ 'login' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti">
+											<i class="material-icons">account_circle</i> Ingresar
+										</button>
+									</form>
+									<form action="{{ url('/')}}/{{ 'index' }}/{{ 'mision-vision' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti">
+											<i class="material-icons">playlist_add_check</i> Misión/Visión
+										</button>
+									</form>
+									<form action="{{ url('/')}}/{{ 'index' }}/{{ 'sobre-nosotros' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti">
+											<i class="material-icons">remove_red_eye</i> Sobre Nosotros
+										</button>
+									</form>
+									<form action="{{ url('/')}}/{{ 'index' }}/{{ 'contactenos' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti">
+											<i class="material-icons">contacts</i> Contactenos
+										</button>
+									</form>
 									<br>
 								</div>
 							</div>
 						</div>
+
 					</div>		
 				</div>
 				<div class="col-sm-9">

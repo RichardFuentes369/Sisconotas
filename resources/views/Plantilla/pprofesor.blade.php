@@ -29,15 +29,27 @@
 						<div class="card">
 							<div class="containe">
 								<div class="col-sm-1"></div>
-								<div class="col-sm 2 menu">
+								<div class="col-sm 2">
 									<br>
 									<h4>Menú Profesores</h4>
 									<h5>{{ Auth::user()->email }}</h5>
 									<h5>{{ Auth::user()->colegios->razon_social }}</h5>
 									<hr>
-									<a href="{{ url('profesor')}}/{{ 'materias' }}" class="fontGhoti"><i class="material-icons">chrome_reader_mode</i> Materias</a><br>
-									<a href="{{ url('profesor')}}/{{ 'alumnos' }}" class="fontGhoti"><i class="material-icons">supervisor_account</i> Alumnos</a><br>
-									<a href="{{ url('profesor')}}/{{ 'notas' }}" class="fontGhoti"><i class="material-icons">spellcheck</i> Notas</a>
+									<form action="{{ url('profesor')}}/{{ 'materias' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti">
+											<i class="material-icons">chrome_reader_mode</i> Materias
+										</button>
+									</form>
+									<form action="{{ url('profesor')}}/{{ 'alumnos' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti subir2">
+											<i class="material-icons">supervisor_account</i> Alumnos
+										</button>
+									</form>
+									<form action="{{ url('profesor')}}/{{ 'notas' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti">
+											<i class="material-icons">spellcheck</i> Notas
+										</button>
+									</form>
 									<hr>
 					        		<div class="col-sm-12">
 										<div class="row">

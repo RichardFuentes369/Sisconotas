@@ -27,16 +27,28 @@
 					<div class="col-sm-12">
 						<br>
 						<div class="card">
-							<div class="containe">
+							<div class="container">
 								<div class="col-sm-1"></div>
-								<div class="col-sm 2 menu">
+								<div class="menu">
 									<br>
 									<h4>Menú Administrador</h4>
 									<h5>{{ Auth::user()->email }}</h5>
 									<hr>
-									<a href="{{ url('administrador')}}/{{ 'colegiosl' }}" class="fontGhoti"><i class="material-icons">account_balance</i> Colegios</a><br>
-									<a href="{{ url('administrador')}}/{{ 'rectoresl' }}" class="fontGhoti"><i class="material-icons">people</i> Rectores</a><br>
-									<a href="{{ url('administrador')}}/{{ 'porcentajesl' }}" class="fontGhoti"><i class="material-icons">gavel</i> Porcentajes</a>
+									<form action="{{ url('administrador')}}/{{ 'colegiosl' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti">
+											<i class="material-icons">account_balance</i> Colegios
+										</button>
+									</form>
+									<form action="{{ url('administrador')}}/{{ 'rectoresl' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti subir2">
+											<i class="material-icons">people</i> Rectores
+										</button>
+									</form>
+									<form action="{{ url('administrador')}}/{{ 'porcentajesl' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti subir2">
+											<i class="material-icons">gavel</i> Porcentajes
+										</button>
+									</form>
 									<hr>
 									<div class="col-sm-12">
 										<div class="row">
@@ -56,6 +68,7 @@
 								</div>
 							</div>
 						</div>
+
 					</div>		
 				</div>
 				<div class="col-sm-9">

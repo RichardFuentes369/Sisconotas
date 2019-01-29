@@ -30,16 +30,32 @@
 						<div class="card">
 							<div class="containe">
 								<div class="col-sm-1"></div>
-								<div class="col-sm 2 menu">
+								<div class="col-sm 2">
 									<br>
 									<h4>Menú Secretarias</h4>
 									<h5>{{ Auth::user()->email }}</h5>
 									<h5>{{ Auth::user()->colegios->razon_social }}</h5>
 									<hr>
-									<a href="{{ url('secretario')}}/{{ 'profesoresl' }}" class="fontGhoti"><i class="material-icons">supervisor_account</i> Profesores</a><br>
-									<a href="{{ url('secretario')}}/{{ 'alumnosl' }}" class="fontGhoti"><i class="material-icons">supervisor_account</i> Alumnos</a><br>
-									<a href="{{ url('secretario')}}/{{ 'anhosl' }}" class="fontGhoti"><i class="material-icons">calendar_today	</i> Años</a><br>
-									<a href="{{ url('secretario')}}/{{ 'materiasl' }}/{{ Auth::user()->colegios->id }}" class="fontGhoti"><i class="material-icons">list</i> Materias</a>
+									<form action="{{ url('secretario')}}/{{ 'profesoresl' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti">
+											<i class="material-icons">supervisor_account</i> Profesores
+										</button>
+									</form>
+									<form action="{{ url('secretario')}}/{{ 'alumnosl' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti subir2">
+											<i class="material-icons">supervisor_account</i> Alumnos
+										</button>
+									</form>
+									<form action="{{ url('secretario')}}/{{ 'anhosl' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti subir2">
+											<i class="material-icons">calendar_today</i> Años
+										</button>
+									</form>
+									<form action="{{ url('secretario')}}/{{ 'materiasl' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti subir2">
+											<i class="material-icons">list</i> Materias
+										</button>
+									</form>
 									<hr>
 					        		<div class="col-sm-12">
 										<div class="row">

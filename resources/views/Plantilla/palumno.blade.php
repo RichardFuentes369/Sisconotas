@@ -29,13 +29,18 @@
 						<div class="card">
 							<div class="containe">
 								<div class="col-sm-1"></div>
-								<div class="col-sm 2 menu">
+								<div class="col-sm 2">
 									<br>
 									<h4>Menú Estudiantes</h4>
 									<h5>{{ Auth::user()->email }}</h5>
 									<h5>{{ Auth::user()->colegios->razon_social }}</h5>
 									<hr>
-									<a href="{{ url('alumno')}}/{{ 'notas' }}" class="fontGhoti"><i class="material-icons">spellcheck</i> Notas</a>
+									<form action="{{ url('alumno')}}/{{ 'notas' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti">
+											<i class="material-icons">spellcheck</i> Notas
+										</button>
+									</form>
+									<hr>
 									<div class="col-sm-12">
 										<div class="row">
 											<div class="col-sm-6">

@@ -29,14 +29,22 @@
 						<div class="card">
 							<div class="containe">
 								<div class="col-sm-1"></div>
-								<div class="col-sm 2 menu">
+								<div class="col-sm 2">
 									<br>
 									<h4>Menú Rector</h4>
 									<h5>{{ Auth::user()->email }}</h5>
 									<h5>{{ Auth::user()->colegios->razon_social }}</h5>
 									<hr>
-									<a href="{{ url('rector')}}/{{ 'secretariasl' }}" class="fontGhoti"><i class="material-icons">supervisor_account</i> Secretarias</a><br>
-									<a href="{{ url('rector')}}/{{ 'profesoresl' }}" class="fontGhoti"><i class="material-icons">supervisor_account</i> Profesores</a><br>
+									<form action="{{ url('rector')}}/{{ 'secretariasl' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti">
+											<i class="material-icons">supervisor_account</i> Profesores
+										</button>
+									</form>
+									<form action="{{ url('rector')}}/{{ 'profesoresl' }}" method="Get">
+										<button class="btn-block btn-outline-success fontGhoti subir2">
+											<i class="material-icons">supervisor_account</i> Alumnos
+										</button>
+									</form>
 									<hr>
 									<div class="col-sm-12">
 										<div class="row">

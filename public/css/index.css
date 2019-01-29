@@ -1,42 +1,57 @@
+/*panel de control*/
 .fontGhoti{
-	font-family: 'Gloria Hallelujah', cursive;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #1F1010;
+	border-radius: 10px 200px 200px 0px;
+	-moz-border-radius: 10px 200px 200px 0px;
+	-webkit-border-radius: 10px 200px 200px 0px;
+	border: 0px solid #000000;
 }
+/*Titulo SISCONOTAS*/
 .fonttitle{
 	font-family: 'Spicy Rice', cursive;
 }
+/*Tabla de resultados*/
 .tableth{
 	background-color: #E9D2CC;
 	color:black;
 }
-.menu{
-	background-color: ;
-	border-radius: 16px;
-}
+/*Subir el banner*/
 .subir{
 	margin-top: -25px;
 }
-.background{
-	background: rgba(206,229,238,1);
-	background: -moz-radial-gradient(center, ellipse cover, rgba(206,229,238,1) 0%, rgba(198,224,236,1) 0%, rgba(79,181,213,1) 87%, rgba(69,178,211,1) 94%);
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(206,229,238,1)), color-stop(0%, rgba(198,224,236,1)), color-stop(87%, rgba(79,181,213,1)), color-stop(94%, rgba(69,178,211,1)));
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(206,229,238,1) 0%, rgba(198,224,236,1) 0%, rgba(79,181,213,1) 87%, rgba(69,178,211,1) 94%);
-	background: -o-radial-gradient(center, ellipse cover, rgba(206,229,238,1) 0%, rgba(198,224,236,1) 0%, rgba(79,181,213,1) 87%, rgba(69,178,211,1) 94%);
-	background: -ms-radial-gradient(center, ellipse cover, rgba(206,229,238,1) 0%, rgba(198,224,236,1) 0%, rgba(79,181,213,1) 87%, rgba(69,178,211,1) 94%);
-	background: radial-gradient(ellipse at center, rgba(206,229,238,1) 0%, rgba(198,224,236,1) 0%, rgba(79,181,213,1) 87%, rgba(69,178,211,1) 94%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cee5ee', endColorstr='#45b2d3', GradientType=1 );
+/*subir menu*/
+.subir2{
+	margin-top: -16px;
 }
+/*Fondo del sistema*/
+.background{
+	background: rgba(212,228,239,1);
+	background: -moz-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(212,228,239,1)), color-stop(100%, rgba(134,174,204,1)));
+	background: -webkit-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
+	background: -o-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
+	background: -ms-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
+	background: linear-gradient(to right, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc', GradientType=1 );
+}
+/*Boton añadir*/
 .botonanadir{
 	border-radius: 200px 0px 200px 124px;
 	-moz-border-radius: 200px 0px 200px 124px;
 	-webkit-border-radius: 200px 0px 200px 124px;
 	border: 0px solid #000000;
 }
+/*Boton ejecutar función*/
 .botonejecutarfuncion{
 	border-radius: 200px 0px 189px 0px;
 	-moz-border-radius: 200px 0px 189px 0px;
 	-webkit-border-radius: 200px 0px 189px 0px;
 	border: 0px solid #000000;
 }
+/*Botones funciones*/
 .botonfunciones{
 	border-radius: 200px 200px 200px 200px;
 	-moz-border-radius: 200px 200px 200px 200px;

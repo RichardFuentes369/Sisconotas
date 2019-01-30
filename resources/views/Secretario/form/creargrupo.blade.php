@@ -20,7 +20,7 @@
 					<div class="input-group mb-3">
 						<div class="input-group mb-3">
 							<div class="input-group-prepend">
-							    <span class="input-group-text" id="basic-addon1">DNI</span>
+							    <span class="input-group-text" id="basic-addon1">Profesor</span>
 							</div>
 						    <select id="id" name="id" class="custom-select" onchange="return buscar(this.value);" required>
 								<option value="0" selected>Seleccióne</option>
@@ -31,16 +31,6 @@
 						</div>
 						<input type="text" class="form-control" id="showId" name="name" readonly>
 					</div> 
-					<div class="input-group mb-3">
-						<div class="input-group-prepend">
-						    <span class="input-group-text" id="basic-addon1">Materias</span>
-						</div>
-						<select class="selectpicker form-control" multiple data-live-search="true" required>
-						 	@foreach($materias as $listar)
-								<option value="{{ $listar -> id }}">{{ $listar -> nombre_materia }}</option>
-							@endforeach
-						</select>
-					</div><br>
 				</div>
 			</div>
 			<div class="modal-footer">

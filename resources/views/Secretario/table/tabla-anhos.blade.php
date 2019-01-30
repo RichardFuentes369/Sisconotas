@@ -20,7 +20,7 @@
 				</td>
 				<td>
 					<form action="{{ url('secretario')}}/{{ 'fechasa' }}/{{ $anho -> id }}/{{ $anho -> anho }}" method="Get">
-						<button class="btn btn-success btn-sm botonfunciones" title="Fecha Corte Periodo">
+						<button class="btn btn-primary btn-sm botonfunciones" title="Fecha Corte Periodo">
 							<i class="material-icons">calendar_today</i>	
 						</button>
 					</form>

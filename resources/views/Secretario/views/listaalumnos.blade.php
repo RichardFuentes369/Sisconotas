@@ -6,10 +6,11 @@
 			<div class="row">
 				<div class="col-sm-10">
 					<br>
+					<h2>Lista Alumnos</h2>
 					<h3>
 						Grupo {{ $grupo }}
 					</h3>
-					registrados en el sistema
+					registrada en el sistema
 				</div>
 				<div class="col-sm-2">
 					<br>
@@ -32,7 +33,7 @@
 				<div class="col-sm-2"></div>
 				<div class="col-sm-8">
 					@include('flash::message')
-					@include('Secretario.table.tabla-agrupacion')
+					@include('Secretario.table.tabla-lista-alumnos')
 				</div>	
 				<div class="col-sm-2"></div>		
 			</div>

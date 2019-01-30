@@ -4,7 +4,7 @@
 		<th>Profesor Encargado</th>
 		<th>Grado</th>
 		<th>Colegio</th>
-		<th colspan="3">Opciónes</th>
+		<th colspan="4">Opciónes</th>
 	</thead>
 	<tbody>
 		@foreach ($curso as $cursos)
@@ -14,18 +14,18 @@
 				<td>{{ $cursos -> nombre }}</td>
 				<td>{{ $cursos -> anhos -> colegios -> razon_social }}</td>
 				<td>
-					<form action="{{ url('secretario')}}/{{ 'alumnosv' }}/{{ $cursos -> anhos -> anho }}/{{ $cursos -> nombre }}/{{ $cursos -> id }}" method="Get">
-						<button class="btn btn-primary btn-sm botonfunciones" title="Ver">
-							<i class="material-icons">visibility</i>
+					<form action="{{ url('secretario')}}/{{ 'alumnosasignadosv' }}/{{ $cursos -> anhos -> anho }}/{{ $cursos -> nombre }}/{{ $cursos -> id }}" method="Get">
+						<button class="btn btn-primary btn-sm botonfunciones" title="Lista">
+							<i class="material-icons">list</i>
 						</button>
 					</form>
 				</td>
 				<td>
-					<form action="#" method="Get">
-						<button class="btn btn-warning btn-sm botonfunciones" title="Editar">
-							<i class="material-icons">cached</i>
+					<form action="{{ url('secretario')}}/{{ 'materiasasignadosv' }}/{{ $cursos -> anhos -> anho }}/{{ $cursos -> nombre }}/{{ $cursos -> id }}" method="Get">
+						<button class="btn btn-primary btn-sm botonfunciones" title="Asignar Materias">
+							<i class="material-icons">book</i>
 						</button>
-					</form>
+					</form>	
 				</td>
 				<td>
 					<form action="{{ url('secretario')}}/{{ 'cursosb' }}/{{ $cursos -> id }}" method="Get">

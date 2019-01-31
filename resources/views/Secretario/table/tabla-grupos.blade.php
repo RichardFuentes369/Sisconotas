@@ -1,6 +1,7 @@
 <table border="0" class="table table-responsive table-hover" style="text-align: center">
 	<thead class="tableth">
 		<th>ID</th>
+		<th>DNI</th>
 		<th>Profesor Encargado</th>
 		<th>Grado</th>
 		<th>Colegio</th>
@@ -10,6 +11,7 @@
 		@foreach ($curso as $cursos)
 			<tr>
 				<td>{{ $cursos -> id }}</td>
+				<td>{{ $cursos -> dni_profesor }}</td>
 				<td>{{ $cursos -> nombre_profesor }}</td>
 				<td>{{ $cursos -> nombre }}</td>
 				<td>{{ $cursos -> anhos -> colegios -> razon_social }}</td>
@@ -26,6 +28,13 @@
 							<i class="material-icons">book</i>
 						</button>
 					</form>	
+				</td>
+				<td>
+					<form action="{{ url('secretario')}}/{{ 'profesorencargadoa' }}/{{ $cursos -> id }}" method="Get">
+						<button class="btn btn-warning btn-sm botonfunciones"  title="Actualizar">
+							<i class="material-icons">cached</i>
+						</button>
+					</form>
 				</td>
 				<td>
 					<form action="{{ url('secretario')}}/{{ 'cursosb' }}/{{ $cursos -> id }}" method="Get">

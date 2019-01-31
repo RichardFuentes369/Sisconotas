@@ -4,7 +4,8 @@ namespace sisconotas\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use sisconotas\Users;
+use sisconotas\User;
+use Auth;
 use sisconotas\Grados;
 use Laracasts\Flash\Flash;
 
@@ -43,6 +44,28 @@ class CursosController extends Controller
         $existe = DB::DELETE('DELETE FROM Grados WHERE id = :varid',['varid' => $id]);
         Flash::error("Se ha eliminado el grado con id " . $id . " de forma correcta");
         return back();
-    }   
+    }
+
+    /*Actualizar Profesor*/   
+    public function profesorAM($id){
+        $existe = DB::SELECT('SELECT * FROM Grados WHERE id = :varid',['varid' => $id]);
+        $profesores = User::orderBy('id','ASC')->where('category', 'profesor')->where('colegio_id', Auth::user()->colegios->id )->paginate(10);
+        return view('Secretario.views.actualizarprofesorencargado')->with('existe',$existe)->with('profesores',$profesores)->with('id',$id);
+    } 
+    /*Actualizando Profesor*/
+    public function actualizarAS(Request $request){
+        $id = $request->input('idactualizar');
+        $dni = $request->input('dni');
+        $consulta = DB::SELECT('SELECT * FROM Users WHERE dni = :varid',['varid' => $dni]);
+        foreach ($consulta as $cons){
+            $nombre=$cons->name;
+            $apellido=$cons->lastname;
+            $documento=$cons->dni;
+        }
+        $actualizar = DB::UPDATE('UPDATE Grados set nombre_profesor = :varname, dni_profesor = :vardni WHERE id = :varid',['varname' => $nombre." ".$apellido,'vardni' => $documento,'varid' => $id]);
+        
+        Flash::success("Se ha actualizado el profesor del grupo con id: ".$id." de forma correcta");
+        return redirect('secretario/anhosl');
+    }  
 }
         

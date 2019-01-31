@@ -15,7 +15,7 @@
 				<td>{{ $lista ->  dni}}</td>
 				<td>
 					<form action="{{ url('secretario')}}/{{ 'alumnosasignadosb' }}/{{ $lista -> id }}" method="Get">
-						<button class="btn btn-danger btn-sm botonfunciones" title="Eliminar" onClick="javascript: return confirm('¿Esta segudo que desea eliminar el año con id {{ $lista -> id }}');">
+						<button class="btn btn-danger btn-sm botonfunciones" title="Eliminar" onClick="javascript: return confirm('¿Esta segudo que desea eliminar el alumno con id {{ $lista -> id }}');">
 							<i class="material-icons">delete_sweep</i>
 						</button>
 					</form>

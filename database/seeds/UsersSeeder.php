@@ -135,7 +135,7 @@ class UsersSeeder extends Seeder
            'category' => 'secretario',
            'phone' => '6395893',
            'cellphone' => '3203658964',
-           'colegio_id' => 2,
+           'colegio_id' => 1,
            ]);
 
         $user7->save();
@@ -151,7 +151,7 @@ class UsersSeeder extends Seeder
             'category' => 'profesor',
             'phone' => '6632008',
             'cellphone' => '3013256964',
-            'colegio_id' => 2,
+            'colegio_id' => 1,
             ]);
 
         $user8->save();
@@ -167,7 +167,7 @@ class UsersSeeder extends Seeder
            'category' => 'alumno',
            'phone' => '6390000',
            'cellphone' => '3203589979',
-           'colegio_id' => 2,
+           'colegio_id' => 1,
            ]);
 
         $user9->save();

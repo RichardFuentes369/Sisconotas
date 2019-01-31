@@ -37,12 +37,12 @@
 									<hr>
 									<form action="{{ url('rector')}}/{{ 'secretariasl' }}" method="Get">
 										<button class="btn-block btn-outline-success fontGhoti">
-											<i class="material-icons">supervisor_account</i> Profesores
+											<i class="material-icons">supervisor_account</i> Secretarios
 										</button>
 									</form>
 									<form action="{{ url('rector')}}/{{ 'profesoresl' }}" method="Get">
 										<button class="btn-block btn-outline-success fontGhoti subir2">
-											<i class="material-icons">supervisor_account</i> Alumnos
+											<i class="material-icons">supervisor_account</i> Profesores
 										</button>
 									</form>
 									<hr>

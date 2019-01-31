@@ -10,14 +10,6 @@ class anhos extends Model
 
     protected $fillable = [
         'id','anho','colegio_id',
-        'fiprimersemestre',
-        'ffprimersemestre',
-        'fisegundosemestre',
-        'ffsegundosemestre',
-        'fitercersemestre',
-        'fftercersemestre',
-        'ficuartosemestre',
-        'ffcuartosemestre',
     ];
 
     /**

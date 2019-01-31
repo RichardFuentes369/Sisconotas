@@ -130,6 +130,8 @@
 		Route::get('cursosa/{id}', 'CursosController@alumnoAS')->where(['id' => '[0-9]+']);
 		Route::post('cursosado','CursosController@actualizarAS');
 		Route::get('cursosb/{id}', 'CursosController@borrarCS')->where(['id' => '[0-9]+']);
+		Route::get('profesorencargadoa/{id}', 'CursosController@profesorAM')->where(['id' => '[0-9]+']);
+		Route::post('profesorencargadoado','CursosController@actualizarAS');
 		Route::get('alumnosasignadosv/{anho}/{grupo}/{id}','AsignacionController@listarAS');
 		Route::post('alumnosasignadosc','AsignacionController@registrarAS');		
 		Route::get('alumnosasignadosb/{id}', 'AsignacionController@borrarAS')->where(['id' => '[0-9]+']);

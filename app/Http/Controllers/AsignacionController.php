@@ -47,7 +47,7 @@ class AsignacionController extends Controller
         $a->apellido_alumno = $vector[1];
         $a->dni = $vector[2];
         $a->save();
-        Flash::success("Se ha registrado el año: ".$a->anho. " de forma correcta");
+        Flash::success("Se ha registrado el alumno: ".$a->nombre_alumno." ".$a->apellido_alumno. " de forma correcta");
         return back();
     }   
 
@@ -91,6 +91,8 @@ class AsignacionController extends Controller
     }
 
     public function borrarMS($id){
-        return 'borrando materia';
+        $existe = DB::DELETE('DELETE FROM l_materias WHERE id = :varid',['varid' => $id]);
+        Flash::error("Se ha eliminado la materia con id " . $id . " de forma correcta");
+        return back();
     }
 }

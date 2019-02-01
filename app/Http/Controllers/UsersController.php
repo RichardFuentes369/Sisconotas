@@ -275,5 +275,19 @@ class UsersController extends Controller
         Flash::error("Se ha eliminado el profesor con DNI: " . $dni . " de forma correcta");
         return redirect('secretario/profesoresl');
     }
-    
+
+    /*Profesor*/
+    public function verAP(Request $request){
+        $anho = '2019';
+        $dniProfesor = Auth::user()->dni; 
+        $consulta = DB::SELECT('SELECT DISTINCT l_alumnos.dni, l_alumnos.nombre_alumno, l_alumnos.apellido_alumno
+                FROM  l_alumnos, grados, anhos, colegios
+                WHERE l_alumnos.grado_id = grados.id
+                AND grados.anho_id = anhos.id
+                AND anhos.colegio_id = colegios.id
+                AND anhos.anho = :varanho
+                AND dni_profesor = :vardni
+                order by l_alumnos.apellido_alumno asc', ['vardni' => $dniProfesor,'varanho' => $anho]);
+        return view('Profesor.views.alumnos',compact('consulta'));
+    }
 }

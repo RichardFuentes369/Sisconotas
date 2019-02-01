@@ -144,18 +144,8 @@
 		Route::get('bienvenido', function(){
 			return view('Profesor.views.index');
 		});
-		Route::get('materias', function(){
-			return view('Profesor.views.materias');
-		});
-		Route::get('alumnos', function(){
-			return view('Profesor.views.alumnos');
-		});
-		Route::get('notas', function(){
-			return view('Profesor.views.notas');
-		});
-		Route::get('ajustes', function(){
-			return view('Profesor.views.ajustes');
-		});
+		/*controladores*/	
+		Route::get('alumnosl','UsersController@verAP');
 	});
 
 	Route::group(['prefix'=>'alumno', 'middleware' => 'auth'], function(){	

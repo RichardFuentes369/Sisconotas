@@ -1,4 +1,4 @@
-<?php
+->nullable()<?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,10 +15,10 @@ class CreateLNotasTable extends Migration
     {
         Schema::create('l_notas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nota1');
-            $table->string('nota2');
-            $table->string('nota3');            
-            $table->string('nota4');
+            $table->string('nota1')->nullable();
+            $table->string('nota2')->nullable();
+            $table->string('nota3')->nullable();            
+            $table->string('nota4')->nullable();
             $table->integer('id_materia')->unsigned();
             $table->integer('id_alumno')->unsigned();
             $table->integer('grado_id')->unsigned();

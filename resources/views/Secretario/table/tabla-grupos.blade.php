@@ -4,7 +4,6 @@
 		<th>DNI</th>
 		<th>Profesor Encargado</th>
 		<th>Grado</th>
-		<th>Colegio</th>
 		<th colspan="4">Opciónes</th>
 	</thead>
 	<tbody>
@@ -14,7 +13,6 @@
 				<td>{{ $cursos -> dni_profesor }}</td>
 				<td>{{ $cursos -> nombre_profesor }}</td>
 				<td>{{ $cursos -> nombre }}</td>
-				<td>{{ $cursos -> anhos -> colegios -> razon_social }}</td>
 				<td>
 					<form action="{{ url('secretario')}}/{{ 'alumnosasignadosv' }}/{{ $cursos -> anhos -> anho }}/{{ $cursos -> nombre }}/{{ $cursos -> id }}" method="Get">
 						<button class="btn btn-primary btn-sm botonfunciones" title="Lista">

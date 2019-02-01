@@ -5,6 +5,7 @@ namespace sisconotas\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use sisconotas\User;
+use Carbon\Carbon;
 use Auth;
 use Laracasts\Flash\Flash;
 
@@ -278,7 +279,8 @@ class UsersController extends Controller
 
     /*Profesor*/
     public function verAP(Request $request){
-        $anho = '2019';
+        $fecha = Carbon::parse($request->fecha);
+        $anho = $fecha->year;
         $dniProfesor = Auth::user()->dni; 
         $consulta = DB::SELECT('SELECT DISTINCT l_alumnos.dni, l_alumnos.nombre_alumno, l_alumnos.apellido_alumno
                 FROM  l_alumnos, grados, anhos, colegios

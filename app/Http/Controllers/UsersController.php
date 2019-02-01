@@ -282,7 +282,7 @@ class UsersController extends Controller
         $fecha = Carbon::parse($request->fecha);
         $anho = $fecha->year;
         $dniProfesor = Auth::user()->dni; 
-        $consulta = DB::SELECT('SELECT DISTINCT l_alumnos.dni, l_alumnos.nombre_alumno, l_alumnos.apellido_alumno
+        $consulta = DB::SELECT('SELECT DISTINCT *
                 FROM  l_alumnos, grados, anhos, colegios
                 WHERE l_alumnos.grado_id = grados.id
                 AND grados.anho_id = anhos.id
@@ -290,6 +290,10 @@ class UsersController extends Controller
                 AND anhos.anho = :varanho
                 AND dni_profesor = :vardni
                 order by l_alumnos.apellido_alumno asc', ['vardni' => $dniProfesor,'varanho' => $anho]);
-        return view('Profesor.views.alumnos',compact('consulta'));
+
+        $consultagrado = DB::SELECT('SELECT * FROM grados, anhos WHERE dni_profesor = :vardni
+                                    AND grados.anho_id = anhos.id
+                                    AND anhos.anho = :varanho', ['vardni' => $dniProfesor, 'varanho' => $anho]);
+        return view('Profesor.views.alumnos',compact('consulta'))->with('consultagrado',$consultagrado);
     }
 }

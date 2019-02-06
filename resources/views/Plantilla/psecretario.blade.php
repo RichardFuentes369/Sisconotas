@@ -7,6 +7,7 @@
       rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<title>@yield('title')</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
@@ -37,22 +38,22 @@
 									<h5>{{ Auth::user()->colegios->razon_social }}</h5>
 									<hr>
 									<form action="{{ url('secretario')}}/{{ 'profesoresl' }}" method="Get">
-										<button class="btn-block btn-outline-success fontGhoti">
+										<button class="btn btn-block btn-outline-success fontGhoti">
 											<i class="material-icons">supervisor_account</i> Profesores
 										</button>
 									</form>
 									<form action="{{ url('secretario')}}/{{ 'alumnosl' }}" method="Get">
-										<button class="btn-block btn-outline-success fontGhoti subir2">
+										<button class="btn btn-block btn-outline-success fontGhoti subir2">
 											<i class="material-icons">supervisor_account</i> Alumnos
 										</button>
 									</form>
 									<form action="{{ url('secretario')}}/{{ 'anhosl' }}" method="Get">
-										<button class="btn-block btn-outline-success fontGhoti subir2">
+										<button class="btn btn-block btn-outline-success fontGhoti subir2">
 											<i class="material-icons">calendar_today</i> Años
 										</button>
 									</form>
 									<form action="{{ url('secretario')}}/{{ 'materiasl' }}" method="Get">
-										<button class="btn-block btn-outline-success fontGhoti subir2">
+										<button class="btn btn-block btn-outline-success fontGhoti subir2">
 											<i class="material-icons">list</i> Materias
 										</button>
 									</form>

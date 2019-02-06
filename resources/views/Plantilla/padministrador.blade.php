@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
@@ -35,17 +35,17 @@
 									<h5>{{ Auth::user()->email }}</h5>
 									<hr>
 									<form action="{{ url('administrador')}}/{{ 'colegiosl' }}" method="Get">
-										<button class="btn-block btn-outline-success fontGhoti">
+										<button class="btn btn-block btn-outline-success fontGhoti">
 											<i class="material-icons">account_balance</i> Colegios
 										</button>
 									</form>
 									<form action="{{ url('administrador')}}/{{ 'rectoresl' }}" method="Get">
-										<button class="btn-block btn-outline-success fontGhoti subir2">
+										<button class="btn btn-block btn-outline-success fontGhoti subir2">
 											<i class="material-icons">people</i> Rectores
 										</button>
 									</form>
 									<form action="{{ url('administrador')}}/{{ 'porcentajesl' }}" method="Get">
-										<button class="btn-block btn-outline-success fontGhoti subir2">
+										<button class="btn btn-block btn-outline-success fontGhoti subir2">
 											<i class="material-icons">gavel</i> Porcentajes
 										</button>
 									</form>

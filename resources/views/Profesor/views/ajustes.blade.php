@@ -7,6 +7,7 @@
 		<hr>
 		<div class="col-sm-12">
 			<div class="row">
+				@include('Profesor.form.ajustes')
 			</div>
 		</div>
 	</div>

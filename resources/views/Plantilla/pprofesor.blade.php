@@ -40,7 +40,7 @@
 											<i class="material-icons">supervisor_account</i> Alumnos
 										</button>
 									</form>
-									<form action="{{ url('profesor')}}/{{ 'notasl' }}" method="Get">
+									<form action="{{ url('profesor')}}/{{ 'listarAN' }}" method="Get">
 										<button class="btn btn-block btn-outline-success fontGhoti subir2">
 											<i class="material-icons">spellcheck</i> Notas
 										</button>

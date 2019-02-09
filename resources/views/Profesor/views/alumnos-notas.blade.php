@@ -1,0 +1,28 @@
+@extends('Plantilla.pprofesor')
+<br>
+@section('content')
+	<div class="container">
+		<div class="col-sm-12">
+			<div class="row">
+				<div class="col-sm-12">
+					<br>
+					@foreach ($consultagrado as $consultagrado)
+						<h3>Notas del grado {{ $consultagrado->nombre }}</h3>
+						registrados en el sistema
+					@endforeach
+				</div>
+			</div>
+			<hr>
+		</div>
+		<div class="col-sm-12">
+			<div class="row">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-7">
+					@include('flash::message')	
+					@include('Profesor.table.tabla-alumnos-notas')
+				</div>	
+				<div class="col-sm-2"></div>		
+			</div>
+		</div>
+	</div>
+@endsection

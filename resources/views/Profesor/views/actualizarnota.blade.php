@@ -1,12 +1,13 @@
-@extends('Plantilla.padministrador')
+@extends('Plantilla.pprofesor')
 <br>
+
 @section('content')
 	<div class="container">
 		<div class="col-sm-12">
 			<div class="row">
 				<div class="col-sm-10">
 					<br>
-					<h3>Actualizar Porcentaje</h3>					
+					<h3>Actualizar nota </h3> 
 					@foreach ($existe as $existe)
 					@endforeach
 				</div>
@@ -17,16 +18,10 @@
 			<div class="row">
 				<div class="col-sm-1"></div>
 				<div class="col-sm-11">
-					@include('Administrador.form.actualizarporcentaje')
+					@include('Profesor.form.actualizarnota')
 				</div>
 			</div>
 			<hr>
-			<form action="{{ url('administrador')}}/{{'porcentajesl'}}" method="Get">
-				<button class="btn btn-link btn-sm" title="Volver">
-					<i class="material-icons">undo</i>
-				</button>
-			</form>
-			<br>
 		</div>
 	</div>
 @endsection

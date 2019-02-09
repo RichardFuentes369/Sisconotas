@@ -144,8 +144,16 @@
 		Route::get('bienvenido', function(){
 			return view('Profesor.views.index');
 		});
+		Route::get('ajustes', function(){
+			return view('Profesor.views.ajustes');
+		});
 		/*controladores*/	
 		Route::get('alumnosl','UsersController@verAP');
+		Route::get('listarAN','NotasController@listarA');
+		Route::get('listarNAP/{grado_id}/{alumno_id}/{dni}', 'NotasController@listarMN')->where(['id' => '[0-9]+']);
+		Route::get('listarND/{grado_id}/{nombre_materia}/{id_materia}/{dni}','NotasController@listarND');	
+		Route::get('notasa/{idnota}', 'NotasController@profesorAN')->where(['id' => '[0-9]+']);
+		Route::post('notasado','NotasController@actualizarAS');
 	});
 
 	Route::group(['prefix'=>'alumno', 'middleware' => 'auth'], function(){	

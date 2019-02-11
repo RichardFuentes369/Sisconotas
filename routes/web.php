@@ -151,7 +151,8 @@
 		Route::get('alumnosl','UsersController@verAP');
 		Route::get('listarAN','NotasController@listarA');
 		Route::get('listarNAP/{grado_id}/{alumno_id}/{dni}', 'NotasController@listarMN')->where(['id' => '[0-9]+']);
-		Route::get('listarND/{grado_id}/{nombre_materia}/{id_materia}/{dni}','NotasController@listarND');	
+		Route::get('listarND/{grado_id}/{id_materia}/{nombre_materia}/{dni}','NotasController@listarND');	
+		Route::post('notasc','NotasController@registrarNAP');	
 		Route::get('notasa/{idnota}', 'NotasController@profesorAN')->where(['id' => '[0-9]+']);
 		Route::post('notasado','NotasController@actualizarAS');
 	});

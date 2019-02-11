@@ -5,6 +5,7 @@ namespace sisconotas\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use sisconotas\User;
+use sisconotas\LNotas;
 use Carbon\Carbon;
 use Auth;
 use Laracasts\Flash\Flash;
@@ -44,7 +45,11 @@ class NotasController extends Controller
         }
         $consulta_notas = DB::SELECT('SELECT * FROM l_notas WHERE grado_id = :vargrado 
                             AND  lalumno_id = :varalumno AND lmateria_id = :varmateria',['vargrado' => $grado_id, 'varalumno' => $ultimoid, 'varmateria' => $id_materia]);
-        return view('Profesor.views.misnotas',compact('consulta_notas'))->with('nombre_materia',$nombre_materia);
+        $consulta_alumnoid = DB::SELECT('SELECT * FROM l_alumnos WHERE grado_id = :vargradoid and dni = :vardni',['vargradoid' => $grado_id, 'vardni' => $dni]);
+        foreach ($consulta_alumnoid as $id){
+            $idalumno=$id->id;
+        }
+        return view('Profesor.views.misnotas',compact('consulta_notas'))->with('nombre_materia',$nombre_materia)->with('id_materia',$id_materia)->with('idalumno',$idalumno)->with('grado_id',$grado_id);
     }
 
     public function profesorAN(Request $request, $id){
@@ -63,5 +68,24 @@ class NotasController extends Controller
         Flash::success("Se ha actualizado la nota con de forma correcta");
         return redirect('profesor/listarAN');
     }
-}
 
+     public function registrarNAP(Request $request){
+        $existe = DB::SELECT('SELECT * FROM l_notas order by id desc limit 1');
+        foreach ($existe as $ult){
+            $ultimoid=$ult->id;
+        }
+        $n = new LNotas();
+        if($existe == null){
+            $n->id == 1;
+        }else{
+            $n->id = $ultimoid + 1;
+        }
+        $n->lmateria_id = $request->input('idmateria');
+        $n->lalumno_id = $request->input('idalumno');
+        $n->nota1 = $request->input('nota1');  
+        $n->grado_id = $request->input('idgrado');
+        $n->save();
+        Flash::success("Se ha registrado la nota con de forma correcta");
+        return redirect('profesor/listarAN');
+    }
+}

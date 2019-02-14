@@ -35,7 +35,7 @@
 									<h5>{{ Auth::user()->email }}</h5>
 									<h5>{{ Auth::user()->colegios->razon_social }}</h5>
 									<hr>
-									<form action="{{ url('alumno')}}/{{ 'notas' }}" method="Get">
+									<form action="{{ url('alumno')}}/{{ 'cursol' }}" method="Get">
 										<button class="btn btn-block btn-outline-success fontGhoti">
 											<i class="material-icons">spellcheck</i> Notas
 										</button>
@@ -49,7 +49,7 @@
 												{!! Form::close() !!}
 											</div>
 											<div class="col-sm-6">
-								        		{!! Form::open(['url' => 'Logout']) !!}
+								        		{!! Form::open(['url' => 'index/Logout']) !!}
 													{{ csrf_field() }}
 														{{ Form::submit('power_settings_new',array('class'=>'btn btn-secondary btn-block material-icons', 'title'=>'Salir')) }}
 												{!! Form::close() !!}

@@ -5,6 +5,7 @@
 		<th>Nota 2</th>
 		<th>Nota 3</th>
 		<th>Nota 4</th>
+		<th>Habilitacion</th>
 		<th>Opción</th>
 		<th>Total</th>
 	</thead>
@@ -15,7 +16,8 @@
 				<td id="nota1">{{ $consul -> nota1 }}</td>
 				<td id="nota2">{{ $consul -> nota2 }}</td>
 				<td id="nota3">{{ $consul -> nota3 }}</td>
-				<td id="nota4">{{ $consul -> nota4 }}</td>
+				<td id="nota4">{{ $consul -> nota4 }}</td>				
+				<td id="habilitacion">{{ $consul -> habilitacion }}</td>
 				<td>
 					<form action="{{ url('profesor')}}/{{ 'notasa' }}/{{ $consul -> id }}" method="Get">
 						<button class="btn btn-warning btn-sm botonfunciones" title="Actualizar Nota">

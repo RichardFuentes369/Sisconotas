@@ -74,5 +74,12 @@ class MateriasSeeder extends Seeder
             'colegio_id' => 1,
           ]);
         $materias9->save();
+
+        $materias10 = Materias::create([
+            'id' => 10,
+            'nombre_materia' => 'Asistencia',
+            'colegio_id' => 1,
+          ]);
+        $materias10->save();
     }
 }

@@ -34,7 +34,7 @@ class AsignacionController extends Controller
         }
         $usuario = DB::SELECT('SELECT * FROM users where dni = :vardni',['vardni' => $dni]);
 	    foreach ($usuario as $user){
-	    	$vector = [$user->name, $user->lastname,$user->dni];;
+	    	$vector = [$user->name, $user->lastname,$user->dni,$user->email];
 	    }
         $a = new LAlumnos();
         if($ultimo == null){
@@ -46,6 +46,7 @@ class AsignacionController extends Controller
         $a->nombre_alumno = $vector[0];
         $a->apellido_alumno = $vector[1];
         $a->dni = $vector[2];
+        $a->email = $vector[3];
         $a->save();
         Flash::success("Se ha registrado el alumno: ".$a->nombre_alumno." ".$a->apellido_alumno. " de forma correcta");
         return back();

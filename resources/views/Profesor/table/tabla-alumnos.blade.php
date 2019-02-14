@@ -3,6 +3,7 @@
 		<th>DNI</th>
 		<th>Apellido</th>
 		<th>Nombre</th>
+		<th>Correo</th>
 	</thead>
 	<tbody>
 		@foreach ($consulta as $consul)
@@ -10,6 +11,7 @@
 				<td>{{ $consul -> dni }}</td>
 				<td>{{ $consul -> apellido_alumno }}</td>
 				<td>{{ $consul -> nombre_alumno }}</td>
+				<td>{{ $consul -> email }}</td>
 			</tr>
 		@endforeach
 	</tbody>	

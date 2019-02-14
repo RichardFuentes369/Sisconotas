@@ -44,6 +44,14 @@
 							<input type="text" class="form-control" name="nota4" id="nota4" value="{{ $existe -> nota4 }}"><br>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-sm-3">
+							{{ Form::label('name','Habilitacion', array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
+						</div>
+						<div class="col-sm-8">
+							<input type="text" class="form-control" name="habilitacion" id="habilitacion" value="{{ $existe -> habilitacion }}"><br>
+						</div>
+					</div>
 					<div class="col-sm-12">
 						<div class="row">
 							<div class="col-sm-3"></div>

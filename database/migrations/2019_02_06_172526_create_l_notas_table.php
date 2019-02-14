@@ -19,6 +19,7 @@ class CreateLNotasTable extends Migration
             $table->double('nota2')->nullable();
             $table->double('nota3')->nullable();
             $table->double('nota4')->nullable();
+            $table->double('habilitacion')->nullable();
             $table->integer('grado_id')->unsigned();
             $table->integer('lmateria_id')->unsigned();
             $table->integer('lalumno_id')->unsigned();

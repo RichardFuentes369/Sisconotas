@@ -15,8 +15,6 @@
 	    return view('prueba');
 	});
 
-	Route::post('Logout','LoginController@logout');
-
 	Route::group(['prefix'=>'index'], function(){	
 		/*vistas*/
 		Route::get('bienvenidos', function(){
@@ -36,6 +34,7 @@
 		});
 		/*controladores*/
 		Route::post('Loguin','LoginController@login');
+		Route::post('Logout','LoginController@logout');
 	});
 
 	Route::group(['prefix'=>'administrador', 'middleware' => 'auth'], function(){	
@@ -161,11 +160,12 @@
 		Route::get('bienvenido', function(){
 			return view('Alumno.views.index');
 		});
-		Route::get('notas', function(){
-			return view('Alumno.views.notas');
-		});
 		Route::get('ajustes', function(){
 			return view('Alumno.views.ajustes');
 		});
+		/*controladores*/	
+		Route::get('cursol','NotasController@verCursosA');
+		Route::get('materiasl/{id}','NotasController@verMateriasA');
+		Route::get('notal/{materia_id}/{nombre_materia}','NotasController@verNotaA');
 	});
 

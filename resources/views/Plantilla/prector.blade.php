@@ -54,7 +54,7 @@
 												{!! Form::close() !!}
 											</div>
 											<div class="col-sm-6">
-								        		{!! Form::open(['url' => 'Logout']) !!}
+								        		{!! Form::open(['url' => 'index/Logout']) !!}
 													{{ csrf_field() }}
 														{{ Form::submit('power_settings_new',array('class'=>'btn btn-secondary btn-block material-icons', 'title'=>'Salir')) }}
 												{!! Form::close() !!}

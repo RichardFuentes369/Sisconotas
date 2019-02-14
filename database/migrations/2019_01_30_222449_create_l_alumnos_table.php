@@ -18,6 +18,7 @@ class CreateLAlumnosTable extends Migration
             $table->string('nombre_alumno');
             $table->string('apellido_alumno');
             $table->string('dni');
+            $table->string('email');
             $table->integer('grado_id')->unsigned();
             $table->foreign('grado_id')
                   ->references('id')

@@ -112,10 +112,10 @@ class NotasController extends Controller
         $anho = $fecha->year;
         $dnie = Auth::user()->dni;
         $colegio_id = Auth::user()->colegio_id;
-        $consultagrado = DB::SELECT('SELECT DISTINCT grados.id FROM grados,colegios,anhos,users 
-                            WHERE grados.anho_id = anhos.id AND anhos.colegio_id = colegios.id
-                            AND colegios.id = users.colegio_id AND users.colegio_id = :varcolegioid 
-                            AND anhos.anho = :varanho',['varcolegioid' => $colegio_id, 'varanho' => $anho]);
+        $consultagrado = DB::SELECT('SELECT grados.id, grados.nombre, grados.nombre_profesor
+                     FROM l_alumnos,grados,anhos WHERE  l_alumnos.grado_id = grados.id  
+                     AND grados.anho_id = anhos.id AND anhos.anho = :varanho
+                     AND l_alumnos.dni = :vardni',['varanho' => $anho, 'vardni' => $dnie]);
         foreach ($consultagrado as $cons){
             $gradoid=$cons->id;
         }

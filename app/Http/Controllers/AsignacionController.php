@@ -13,8 +13,7 @@ use sisconotas\User;
 
 class AsignacionController extends Controller
 {
-    /**---------------------------------------Alummnos----------------------------------------**/
-
+    /**---------------------------------------SECRETARIO----------------------------------------**/
 	/**Listar alumnos propios del colegio x**/
     public function listarAS($anho,$grupo,$id){
     	$var = Auth::user()->colegios->id;
@@ -23,7 +22,6 @@ class AsignacionController extends Controller
     	$listaralumnos = DB::SELECT('SELECT * FROM Users WHERE colegio_id = :varcolegio and category = :varcategoria',['varcolegio' => $var, 'varcategoria' => $var2]);
         return view('Secretario.views.listaalumnos',compact('anho','grupo','id'))->with('listagrupo',$listagrupo)->with('listaralumnos',$listaralumnos);
     }
-
     /**Insertar alumno**/
     public function registrarAS(Request $request){
         $dni = $request->input('dni'); 
@@ -51,17 +49,12 @@ class AsignacionController extends Controller
         Flash::success("Se ha registrado el alumno: ".$a->nombre_alumno." ".$a->apellido_alumno. " de forma correcta");
         return back();
     }   
-
     /*borrar alumno del curso*/
     public function borrarAS($id){
         $existe = DB::DELETE('DELETE FROM l_alumnos WHERE id = :varid',['varid' => $id]);
         Flash::error("Se ha eliminado el estudiante con id " . $id . " de forma correcta");
         return back();
     } 
-
-
-    /**---------------------------------------Materias----------------------------------------**/
-
     /**Listar materias propias del colegio x**/
     public function listarMS($anho,$grupo,$id){
         $var = Auth::user()->colegios->id;
@@ -69,7 +62,6 @@ class AsignacionController extends Controller
         $mismaterias = DB::SELECT('SELECT * FROM l_materias WHERE  grado_id = :varid',['varid' => $id ]);
         return view('Secretario.views.listamaterias',compact('anho','grupo','id'))->with('listarmaterias',$listarmaterias)->with('mismaterias',$mismaterias);
     }
-
     /**Insertar Materia**/
     public function registrarMS(Request $request){
         $materia = $request->input('nombre_materia'); 
@@ -90,7 +82,7 @@ class AsignacionController extends Controller
         Flash::success("Se ha registrado la materia: ".$materia. " de forma correcta");
         return back();
     }
-
+    /**Borrar Materia**/
     public function borrarMS($id){
         $existe = DB::DELETE('DELETE FROM l_materias WHERE id = :varid',['varid' => $id]);
         Flash::error("Se ha eliminado la materia con id " . $id . " de forma correcta");

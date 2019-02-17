@@ -14,70 +14,25 @@ use Auth;
 
 class ColegiosController extends Controller
 {
+
+    /*----------------------------------ADMINISTRADOR---------------------------------------------------*/
     /*Listar todos los colegios*/
     public function listarC(){
         $colegios = Colegios::orderBy('id','ASC')->where('id','>','0')->paginate(10);
         return view('Administrador.views.colegios')->with('colegios',$colegios);
     }
-
     /*Listar todos los rectores*/
     public function listarR(){
         $colegios = Colegios::orderBy('id','ASC')->where('id','>','0')->paginate(100);
         $rectores = User::orderBy('id','ASC')->where('category', 'rector')->paginate(10);
         return view('Administrador.views.rectores')->with('colegios',$colegios)->with('rectores',$rectores);
     }
-
-    /*Listar Secretarias por colegio*/
-    public function listarS(){
-        $secretarios = User::orderBy('id','ASC')->where('category', 'secretario')->where('colegio_id', Auth::user()->colegios->id )->paginate(10);
-        return view('Rector.views.secretarios')->with('secretarios',$secretarios);
-    }
-
-    /*Listar Profesores por colegio*/
-    public function listarP(){
-        $profesores = User::orderBy('id','ASC')->where('category', 'profesor')->where('colegio_id', Auth::user()->colegios->id )->paginate(10);
-        return view('Rector.views.profesores')->with('profesores',$profesores);
-    }
-
-    /*Listar Profesores por colegio secretario*/
-    public function listarPS(){
-        $profesores = User::orderBy('id','ASC')->where('category', 'profesor')->where('colegio_id', Auth::user()->colegios->id )->paginate(10);
-        return view('Secretario.views.profesores')->with('profesores',$profesores);
-    }
-
-    /*Listar Alumnos por colegio*/
-    public function listarA(){
-        $alumnos = User::orderBy('id','ASC')->where('category', 'alumno')->where('colegio_id', Auth::user()->colegios->id )->paginate(10);
-        return view('Rector.views.alumnos')->with('alumnos',$alumnos);
-    }
-
-    /*Listar Alumnos por secretario*/
-    public function listarAS(){
-        $alumnos = User::orderBy('id','ASC')->where('category', 'alumno')->where('colegio_id', Auth::user()->colegios->id )->paginate(10);
-        return view('Secretario.views.alumnos')->with('alumnos',$alumnos);
-    }
-
-    /*Listar Años por secretario*/
-    public function listarCAS(){
-        $anhos = Anhos::orderBy('id','ASC')->where('colegio_id', Auth::user()->colegios->id )->paginate(10);
-        return view('Secretario.views.anhos')->with('anhos',$anhos);
-    }
-
-    /*Listar Cursos por año por secretaria*/
-    public function listarCS($id,$anho){
-        $curso = Grados::orderBy('id','ASC')->where('anho_id', $id )->paginate(10);
-        $profesor = User::orderBy('id','ASC')->where('category', 'profesor')->where('colegio_id',Auth::user()->Colegios->id)->paginate(10);
-        $materias = Materias::orderBy('id','ASC')->where('colegio_id',Auth::user()->Colegios->id)->paginate(10);
-        return view('Secretario.views.grupos',compact('anho','id'))->with('curso',$curso)->with('profesor',$profesor)->with('materias',$materias);
-    }
-
     /*ver colegio*/
     public function verC($nit){
         /*consulta*/
         $existe = DB::SELECT('SELECT * FROM Colegios WHERE nit = :varnit',['varnit' => $nit]);
         return view('Administrador.views.vercolegio',compact('existe'));
     }
-
     /*Registrar colegios*/
     public function registrarC(Request $request){
         $nit = $request->input('nit'); 
@@ -111,13 +66,11 @@ class ColegiosController extends Controller
             return redirect('administrador/colegiosl');
         }
     }
-
     /*Actualizar colegios*/
     public function colegioA($nit){
         $existe = DB::SELECT('SELECT * FROM Colegios WHERE nit = :varnit',['varnit' => $nit]);
         return view('Administrador.views.actualizarcolegio')->with('existe',$existe);
     }
-
     public function actualizarC(Request $request){
         $nit = $request->input('nit');
         $razon_social = $request->input('razon');
@@ -130,11 +83,49 @@ class ColegiosController extends Controller
         Flash::success("Se ha actualizado el colegio con nit: " .$nit);
         return redirect('administrador/colegiosl');
     }
-    
     /*Eliminar colegios*/
     public function borrarC($nit){
         $existe = DB::DELETE('DELETE FROM Colegios WHERE nit = :varnit',['varnit' => $nit]);
         Flash::error("Se ha eliminado el colegio con nit: " . $nit . " de forma correcta");
         return redirect('administrador/colegiosl');
+    }
+    /*----------------------------------RECTOR---------------------------------------------------*/
+    /*Listar Secretarias por colegio*/
+    public function listarS(){
+        $secretarios = User::orderBy('id','ASC')->where('category', 'secretario')->where('colegio_id', Auth::user()->colegios->id )->paginate(10);
+        return view('Rector.views.secretarios')->with('secretarios',$secretarios);
+    }
+    /*Listar Profesores por colegio*/
+    public function listarP(){
+        $profesores = User::orderBy('id','ASC')->where('category', 'profesor')->where('colegio_id', Auth::user()->colegios->id )->paginate(10);
+        return view('Rector.views.profesores')->with('profesores',$profesores);
+    }
+    /*Listar Alumnos por colegio*/
+    public function listarA(){
+        $alumnos = User::orderBy('id','ASC')->where('category', 'alumno')->where('colegio_id', Auth::user()->colegios->id )->paginate(10);
+        return view('Rector.views.alumnos')->with('alumnos',$alumnos);
+    }
+    /*----------------------------------SECRETARIA---------------------------------------------------*/
+    /*Listar Profesores por colegio secretario*/
+    public function listarPS(){
+        $profesores = User::orderBy('id','ASC')->where('category', 'profesor')->where('colegio_id', Auth::user()->colegios->id )->paginate(10);
+        return view('Secretario.views.profesores')->with('profesores',$profesores);
+    }
+    /*Listar Alumnos por secretario*/
+    public function listarAS(){
+        $alumnos = User::orderBy('id','ASC')->where('category', 'alumno')->where('colegio_id', Auth::user()->colegios->id )->paginate(10);
+        return view('Secretario.views.alumnos')->with('alumnos',$alumnos);
+    }
+    /*Listar Años por secretario*/
+    public function listarCAS(){
+        $anhos = Anhos::orderBy('id','ASC')->where('colegio_id', Auth::user()->colegios->id )->paginate(10);
+        return view('Secretario.views.anhos')->with('anhos',$anhos);
+    }
+    /*Listar Cursos por año por secretaria*/
+    public function listarCS($id,$anho){
+        $curso = Grados::orderBy('id','ASC')->where('anho_id', $id )->paginate(10);
+        $profesor = User::orderBy('id','ASC')->where('category', 'profesor')->where('colegio_id',Auth::user()->Colegios->id)->paginate(10);
+        $materias = Materias::orderBy('id','ASC')->where('colegio_id',Auth::user()->Colegios->id)->paginate(10);
+        return view('Secretario.views.grupos',compact('anho','id'))->with('curso',$curso)->with('profesor',$profesor)->with('materias',$materias);
     }
 }

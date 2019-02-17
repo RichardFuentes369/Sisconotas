@@ -10,6 +10,7 @@ use Auth;
 
 class MateriasController extends Controller
 {
+    /***********************************************SECRETARIO*****************************************************/
     /*Listar materias*/
     public function listarMS(){
     	$var = Auth::user()->colegios->id; 

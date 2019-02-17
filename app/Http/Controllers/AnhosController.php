@@ -11,12 +11,13 @@ use Laracasts\Flash\Flash;
 
 class AnhosController extends Controller
 {  
+
+    /**----------------------------------SECRETARIA---------------------------------------------------**/
     /*ver anhos*/
     public function verAS($id){
     	$existe = DB::SELECT('SELECT * FROM Anhos WHERE id = :varid',['varid' => $id]);
         return view('Secretario.views.veranho',compact('existe'));
     }
-
 	/*registrar anhos*/
     public function registrarAS(Request $request){
         $anho = $request->input('anho'); 
@@ -50,7 +51,6 @@ class AnhosController extends Controller
             return redirect('secretario/anhosl');
         }
     }   
-
     /*Actualizar Fecha corte anhos*/
     public function fechacorteAS($id,$anho){
         $existe = DB::SELECT('SELECT * FROM Anhos WHERE id = :varid and anho = :varanho',['varid' => $id, 'varanho' => $anho]);

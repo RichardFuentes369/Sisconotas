@@ -11,6 +11,7 @@ use Laracasts\Flash\Flash;
 
 class CursosController extends Controller
 {
+    /************************************SECRETARIO****************************************************************/
    	/*registrar cursos por año*/
     public function registrarCS(Request $request){
         $grupo = $request->input('grupo'); 
@@ -38,14 +39,12 @@ class CursosController extends Controller
         Flash::success("Se ha registrado el grado: ".$grupo." <br> y el profesor encargado es: ".$g->nombre_profesor. " <br> en el grado con id ".$g->id);
         return back();
     }
-
     /*borrar cursos*/
     public function borrarCS($id){
         $existe = DB::DELETE('DELETE FROM Grados WHERE id = :varid',['varid' => $id]);
         Flash::error("Se ha eliminado el grado con id " . $id . " de forma correcta");
         return back();
     }
-
     /*Actualizar Profesor*/   
     public function profesorAM($id){
         $existe = DB::SELECT('SELECT * FROM Grados WHERE id = :varid',['varid' => $id]);

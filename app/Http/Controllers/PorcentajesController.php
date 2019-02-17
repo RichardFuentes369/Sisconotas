@@ -10,6 +10,7 @@ use Laracasts\Flash\Flash;
 
 class PorcentajesController extends Controller
 {
+    /********************************************ADMINISTRADOR**********************************************/
     /*Listar Porcentajes*/
     public function listarP(){
         $porcentajes = Porcentajes::orderBy('id','ASC')->paginate(100);
@@ -49,7 +50,7 @@ class PorcentajesController extends Controller
         $existe = DB::SELECT('SELECT * FROM Porcentajes WHERE id = :varid',['varid' => $id]);
         return view('Administrador.views.actualizarporcentaje')->with('existe',$existe);
     }
-
+    /*Actualizando porcentaje*/
     public function actualizarP(Request $request){
         $id = $request->input('id');
         $periodo1 = $request->input('periodo1');

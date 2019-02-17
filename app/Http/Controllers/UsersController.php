@@ -11,7 +11,7 @@ use Laracasts\Flash\Flash;
 
 class UsersController extends Controller
 {
-    /*Administrador*/
+    /********************************************ADMINISTRADOR**********************************************/
     public function verR($dni){
         $existe = DB::SELECT('SELECT * FROM Users WHERE dni = :vardni',['vardni' => $dni]);
         return view('Administrador.views.verrector',compact('existe'));
@@ -65,7 +65,7 @@ class UsersController extends Controller
         return redirect('administrador/rectoresl');
     }
 
-    /*Rector*/
+    /********************************************RECTOR**********************************************/
     public function verS($dni){
         $existe = DB::SELECT('SELECT * FROM Users WHERE dni = :vardni',['vardni' => $dni]);
         return view('Rector.views.versecretario',compact('existe'));
@@ -171,7 +171,7 @@ class UsersController extends Controller
         return redirect('rector/profesoresl');
     }
 
-    /*Secretario*/
+    /********************************************SECRETARIO**********************************************/
     public function verPS($dni){
         $existe = DB::SELECT('SELECT * FROM Users WHERE dni = :vardni',['vardni' => $dni]);
         return view('Secretario.views.verprofesor',compact('existe'));
@@ -277,7 +277,7 @@ class UsersController extends Controller
         return redirect('secretario/profesoresl');
     }
 
-    /*Profesor*/
+    /********************************************PROFESOR**********************************************/
     public function verAP(Request $request){
         $fecha = Carbon::parse($request->fecha);
         $anho = $fecha->year;

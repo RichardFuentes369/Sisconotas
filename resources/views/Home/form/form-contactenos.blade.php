@@ -21,6 +21,6 @@
     </div>
     <div class="form-group">                
         {{ Form::submit('Enviar',array('class'=>'btn btn-success')) }}
-        {{ Form::submit('Limpiar',array('class'=>'btn btn-danger')) }}                
+        {{ Form::reset('Limpiar',array('class'=>'btn btn-danger')) }}                
     </div>
 {!! Form::close() !!}

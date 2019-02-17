@@ -12,6 +12,8 @@ use Laracasts\Flash\Flash;
 
 class NotasController extends Controller
 {
+    /*******************************************+PROFESORES******************************************++++*/
+    /*Listar Alumnos*/
     public function listarA(Request $request){
     	$fecha = Carbon::parse($request->fecha);
         $anho = $fecha->year;
@@ -30,14 +32,14 @@ class NotasController extends Controller
                                     AND anhos.anho = :varanho', ['vardni' => $dniProfesor, 'varanho' => $anho]);
         return view('Profesor.views.alumnos-notas',compact('consulta'))->with('consultagrado',$consultagrado);
     }
-
+    /*Listar materias profesor*/
     public function listarMN(Request $request,$grado_id,$id,$dni){
         $fecha = Carbon::parse($request->fecha);
         $anho = $fecha->year;
         $consulta_materias = DB::SELECT('SELECT * FROM l_materias WHERE grado_id = :vargrado', ['vargrado' => $grado_id]);
         return view('Profesor.views.notas')->with('dni',$dni)->with('consulta_materias',$consulta_materias);
     }
-
+    /*Listar notas profesor*/
     public function listarND(Request $request,$grado_id,$id_materia,$nombre_materia,$dni){
         $consulta_idalumno =DB::SELECT('SELECT id FROM l_alumnos WHERE dni = :vardni',['vardni' => $dni]); 
         foreach ($consulta_idalumno as $idal){
@@ -51,12 +53,12 @@ class NotasController extends Controller
         }
         return view('Profesor.views.misnotas',compact('consulta_notas'))->with('nombre_materia',$nombre_materia)->with('id_materia',$id_materia)->with('idalumno',$idalumno)->with('grado_id',$grado_id);
     }
-
+    /*actualizar nota */
     public function profesorAN(Request $request, $id){
         $existe = DB::SELECT('SELECT * FROM l_notas WHERE id = :varid',['varid' => $id]);
         return view('Profesor.views.actualizarnota',compact('existe'))->with('id',$id);
     }
-
+    /*Actualizando nota*/
     public function actualizarAS(Request $request){
         $id = $request->input('id');
         $nota1 = $request->input('nota1');
@@ -69,8 +71,8 @@ class NotasController extends Controller
         Flash::success("Se ha actualizado la nota con de forma correcta");
         return redirect('profesor/listarAN');
     }
-
-     public function registrarNAP(Request $request){
+    /*registrar nota*/
+    public function registrarNAP(Request $request){
         $existe = DB::SELECT('SELECT * FROM l_notas order by id desc limit 1');
         foreach ($existe as $ult){
             $ultimoid=$ult->id;
@@ -90,6 +92,8 @@ class NotasController extends Controller
         return redirect('profesor/listarAN');
     }
 
+    /*********************************************************ALUMNOS*******************************************/
+    /*Ver cursos*/
     public function verCursosA(Request $request){
         $fecha = Carbon::parse($request->fecha);
         $anho = $fecha->year;
@@ -101,12 +105,12 @@ class NotasController extends Controller
                      AND l_alumnos.dni = :vardni',['varanho' => $anho, 'vardni' => $dni]);
         return view('Alumno.views.gradoactual',compact('consulta'));
     }
-
+    /*Listar materias*/
     public function verMateriasA(Request $request,$id){
         $consulta = DB::SELECT('SELECT * FROM l_materias WHERE grado_id = :vargradoid',['vargradoid' => $id]);
         return view('Alumno.views.materias',compact('consulta'));   
     }
-
+    /*Listar Notas*/
     public function verNotaA(Request $request,$materia_id,$nombre_materia){
         $fecha = Carbon::parse($request->fecha);
         $anho = $fecha->year;

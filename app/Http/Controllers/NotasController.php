@@ -94,8 +94,10 @@ class NotasController extends Controller
         $fecha = Carbon::parse($request->fecha);
         $anho = $fecha->year;
         $dni = Auth::user()->dni; 
-        $consulta = DB::SELECT('SELECT grados.id, grados.nombre, grados.nombre_profesor, grados.dni_profesor
-                     FROM grados,anhos,l_alumnos WHERE grados.anho_id = anhos.id AND anhos.anho = :varanho
+
+        $consulta = DB::SELECT('SELECT grados.id, grados.nombre, grados.nombre_profesor
+                     FROM l_alumnos,grados,anhos WHERE  l_alumnos.grado_id = grados.id  
+                     AND grados.anho_id = anhos.id AND anhos.anho = :varanho
                      AND l_alumnos.dni = :vardni',['varanho' => $anho, 'vardni' => $dni]);
         return view('Alumno.views.gradoactual',compact('consulta'));
     }
@@ -105,11 +107,10 @@ class NotasController extends Controller
         return view('Alumno.views.materias',compact('consulta'));   
     }
 
-//esto esta mal
     public function verNotaA(Request $request,$materia_id,$nombre_materia){
         $fecha = Carbon::parse($request->fecha);
         $anho = $fecha->year;
-        $dni = Auth::user()->dni;
+        $dnie = Auth::user()->dni;
         $colegio_id = Auth::user()->colegio_id;
         $consultagrado = DB::SELECT('SELECT DISTINCT grados.id FROM grados,colegios,anhos,users 
                             WHERE grados.anho_id = anhos.id AND anhos.colegio_id = colegios.id
@@ -118,14 +119,17 @@ class NotasController extends Controller
         foreach ($consultagrado as $cons){
             $gradoid=$cons->id;
         }
-        $consutlalalumnoid = DB::SELECT('SELECT l_alumnos.id FROM l_alumnos WHERE  l_alumnos.grado_id = :vargradoid AND dni = :vardni',['vargradoid' => $gradoid, 'vardni' => $dni]);
-        foreach ($consutlalalumnoid as $cons){
-            $alumno_id=$cons->id;
+
+        $consultalalumnoid = DB::SELECT('SELECT * FROM l_alumnos WHERE  l_alumnos.grado_id = :vargradoid AND l_alumnos.dni = :vardni',['vargradoid' => $gradoid, 'vardni' => $dnie]);
+        foreach ($consultalalumnoid as $cons){
+            $alumnoid=$cons->id;
         }
+
         $consultanotas = DB::SELECT('SELECT l_notas.id,l_notas.nota1,l_notas.nota2,l_notas.nota3,l_notas.nota4,l_notas.habilitacion
-                        FROM l_notas
-                        WHERE l_notas.grado_id = :vargradoid AND l_notas.lmateria_id = :varmateriaid AND l_notas.lalumno_id = :varalumnoid',['vargradoid'=>$gradoid, 'varmateriaid'=>$materia_id, 'varalumnoid'=>$alumno_id]);
-        return $consultanotas;
+                FROM l_notas
+                WHERE l_notas.grado_id = :vargradoid AND l_notas.lmateria_id = :varmateriaid AND l_notas.lalumno_id = :varalumnoid',['vargradoid' => $gradoid, 'varmateriaid' => $materia_id, 'varalumnoid' => $alumnoid]);
+
+        return view('Alumno.views.notas-materia',compact('consultanotas'))->with('nombre_materia',$nombre_materia);
     }
 
 }

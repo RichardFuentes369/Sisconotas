@@ -64,6 +64,23 @@ class UsersController extends Controller
         Flash::error("Se ha eliminado el usuario con cc " . $dni . " de forma correcta");
         return redirect('administrador/rectoresl');
     }
+    public function actualizarA(Request $request){    
+        $name = $request->input('name');
+        $lastname = $request->input('lastname');  
+        $email = $request->input('email');  
+        $dni = $request->input('dni');
+        $sexo = $request->input('sexo');
+        $phone = $request->input('phone');
+        $birthdate = $request->input('birthdate');
+        $cellphone = $request->input('cellphone');
+        $password = $request->input('password');
+        $passwordencriptada = bcrypt($password);
+        $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo,
+             sexo = :varsexo, phone = :varphone, cellphone = :varcellphone, birthdate = :varbirthdate, password = :varpassword
+            WHERE dni = :vardni',['varname' => $name,'varlastname' => $lastname,'varcorreo' => $email,'varcorreo' => $email,'varsexo' => $sexo,'varphone' => $phone,'varbirthdate' => $birthdate,'varcellphone' => $cellphone,'varpassword' => $passwordencriptada, 'vardni' =>$dni]);
+        Auth::logout();
+        return redirect('/');
+    }
 
     /********************************************RECTOR**********************************************/
     public function verS($dni){
@@ -169,6 +186,23 @@ class UsersController extends Controller
         $existe = DB::DELETE('DELETE FROM Users WHERE dni = :vardni',['vardni' => $dni]);
         Flash::error("Se ha eliminado el profesor con DNI: " . $dni . " de forma correcta");
         return redirect('rector/profesoresl');
+    }
+    public function actualizarR(Request $request){    
+        $name = $request->input('name');
+        $lastname = $request->input('lastname');  
+        $email = $request->input('email');  
+        $dni = $request->input('dni');
+        $sexo = $request->input('sexo');
+        $phone = $request->input('phone');
+        $birthdate = $request->input('birthdate');
+        $cellphone = $request->input('cellphone');
+        $password = $request->input('password');
+        $passwordencriptada = bcrypt($password);
+        $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo,
+             sexo = :varsexo, phone = :varphone, cellphone = :varcellphone, birthdate = :varbirthdate, password = :varpassword
+            WHERE dni = :vardni',['varname' => $name,'varlastname' => $lastname,'varcorreo' => $email,'varcorreo' => $email,'varsexo' => $sexo,'varphone' => $phone,'varbirthdate' => $birthdate,'varcellphone' => $cellphone,'varpassword' => $passwordencriptada, 'vardni' =>$dni]);
+        Auth::logout();
+        return redirect('/');
     }
 
     /********************************************SECRETARIO**********************************************/
@@ -276,6 +310,23 @@ class UsersController extends Controller
         Flash::error("Se ha eliminado el profesor con DNI: " . $dni . " de forma correcta");
         return redirect('secretario/profesoresl');
     }
+    public function actualizarS(Request $request){    
+        $name = $request->input('name');
+        $lastname = $request->input('lastname');  
+        $email = $request->input('email');  
+        $dni = $request->input('dni');
+        $sexo = $request->input('sexo');
+        $phone = $request->input('phone');
+        $birthdate = $request->input('birthdate');
+        $cellphone = $request->input('cellphone');
+        $password = $request->input('password');
+        $passwordencriptada = bcrypt($password);
+        $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo,
+             sexo = :varsexo, phone = :varphone, cellphone = :varcellphone, birthdate = :varbirthdate, password = :varpassword
+            WHERE dni = :vardni',['varname' => $name,'varlastname' => $lastname,'varcorreo' => $email,'varcorreo' => $email,'varsexo' => $sexo,'varphone' => $phone,'varbirthdate' => $birthdate,'varcellphone' => $cellphone,'varpassword' => $passwordencriptada, 'vardni' =>$dni]);
+        Auth::logout();
+        return redirect('/');
+    }
 
     /********************************************PROFESOR**********************************************/
     public function verAP(Request $request){
@@ -295,5 +346,41 @@ class UsersController extends Controller
                                     AND grados.anho_id = anhos.id
                                     AND anhos.anho = :varanho', ['vardni' => $dniProfesor, 'varanho' => $anho]);
         return view('Profesor.views.alumnos',compact('consulta'))->with('consultagrado',$consultagrado);
+    }
+    public function actualizarP(Request $request){    
+        $name = $request->input('name');
+        $lastname = $request->input('lastname');  
+        $email = $request->input('email');  
+        $dni = $request->input('dni');
+        $sexo = $request->input('sexo');
+        $phone = $request->input('phone');
+        $birthdate = $request->input('birthdate');
+        $cellphone = $request->input('cellphone');
+        $password = $request->input('password');
+        $passwordencriptada = bcrypt($password);
+        $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo,
+             sexo = :varsexo, phone = :varphone, cellphone = :varcellphone, birthdate = :varbirthdate, password = :varpassword
+            WHERE dni = :vardni',['varname' => $name,'varlastname' => $lastname,'varcorreo' => $email,'varcorreo' => $email,'varsexo' => $sexo,'varphone' => $phone,'varbirthdate' => $birthdate,'varcellphone' => $cellphone,'varpassword' => $passwordencriptada, 'vardni' =>$dni]);
+        Auth::logout();
+        return redirect('/');
+    }
+
+    /********************************************ALUMNO**********************************************/
+    public function actualizarAl(Request $request){    
+        $name = $request->input('name');
+        $lastname = $request->input('lastname');  
+        $email = $request->input('email');  
+        $dni = $request->input('dni');
+        $sexo = $request->input('sexo');
+        $phone = $request->input('phone');
+        $birthdate = $request->input('birthdate');
+        $cellphone = $request->input('cellphone');
+        $password = $request->input('password');
+        $passwordencriptada = bcrypt($password);
+        $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo,
+             sexo = :varsexo, phone = :varphone, cellphone = :varcellphone, birthdate = :varbirthdate, password = :varpassword
+            WHERE dni = :vardni',['varname' => $name,'varlastname' => $lastname,'varcorreo' => $email,'varcorreo' => $email,'varsexo' => $sexo,'varphone' => $phone,'varbirthdate' => $birthdate,'varcellphone' => $cellphone,'varpassword' => $passwordencriptada, 'vardni' =>$dni]);
+        Auth::logout();
+        return redirect('/');
     }
 }

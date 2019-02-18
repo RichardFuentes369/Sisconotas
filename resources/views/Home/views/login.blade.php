@@ -12,7 +12,7 @@
 					<div class="col-sm-3"></div>
 					<div class="col-sm-6">
 						<br><br><br>	
-						<h3>INGRESO A LA PLATAFORMA</h3>
+						<h3>INGRESO A LA PLATAFORMA</h3>	
 						@include('Home.form.form-login')
 						<br><br><br><br>
 					</div>

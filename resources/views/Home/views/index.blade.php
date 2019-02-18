@@ -8,7 +8,7 @@
 	<div class="container">
 		<br>
 		<div class="row">
-			<div class="col-sm-12">
+			<div class="col-sm-12">			
 				@include('Home.form.form-paginainicial')
 			</div>
 		</div>

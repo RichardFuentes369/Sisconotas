@@ -1,4 +1,4 @@
-{!! Form::open(['url' => '']) !!}
+{!! Form::open(['url' => 'administrador/ajustesA']) !!}
 	{{ csrf_field() }}
 	<center>
 		<div class="col-sm-12"><br>
@@ -22,7 +22,7 @@
 						<div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">DNI</span>
 						</div>
-					    {{ Form::text('text',Auth::user()->dni,['class' => 'form-control', 'type' => 'name', 'placeholder' => 'Ingrese el dni del usuario', 'name' => 'dni','required']) }}
+					    {{ Form::text('text',Auth::user()->dni,['class' => 'form-control', 'type' => 'name', 'placeholder' => 'Ingrese el dni del usuario', 'name' => 'dni','required', 'readonly']) }}
 					</div> 
 					<div class="input-group mb-3">
 						<div class="input-group-prepend">
@@ -56,7 +56,7 @@
 						<div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">@</span>
 						  </div>
-					    {{ Form::text('text',Auth::user()->email,['class' => 'form-control', 'type' => 'name', 'placeholder' => 'Ingrese el nombre del usuario', 'name' => 'email','required']) }}
+					    {{ Form::text('text',Auth::user()->email,['class' => 'form-control', 'type' => 'name', 'placeholder' => 'Ingrese el nombre del usuario', 'name' => 'email','required', 'readonly']) }}
 					</div>
 				</div>
 				<div class="col-sm-12">
@@ -64,9 +64,11 @@
 						<div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">Contraseña</span>
 						</div>
-					    {{ Form::text('text',null,['class' => 'form-control', 'type' => 'name', 'placeholder' => 'Ingrese la nueva contraseña', 'name' => 'lastname','required']) }}
+					    {{ Form::text('text',null,['class' => 'form-control', 'type' => 'name', 'placeholder' => 'Ingrese la nueva contraseña', 'name' => 'password','required']) }}
 					</div> 
 				</div>
+				<marquee>Si luego de actualizar algun dato el sistema te saca, recuerda que debes iniciar nuevamente la sessión. Y si
+				actualizaste la contraseña, ingresa con la nueva contraseña.</marquee>
 			</div>
 			<div class="modal-footer">
             	{{ Form::submit('Actualizar',array('class'=>'btn btn-warning botonejecutarfuncion')) }}

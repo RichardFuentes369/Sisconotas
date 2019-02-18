@@ -88,7 +88,7 @@
 		Route::get('profesoresa/{dni}', 'UsersController@profesorA')->where(['id' => '[0-9]+']);
 		Route::post('profesoresado','UsersController@actualizarP');
 		Route::get('profesoresb/{dni}', 'UsersController@borrarP')->where(['dni' => '[0-9A-Za-z]+']);
-		Route::post('ajustesR','UsersController@actualizarR');
+		Route::post('ajustesR','UsersController@actualizarRe');
 	});
 
 	Route::group(['prefix'=>'secretario', 'middleware' => 'auth'], function(){	
@@ -139,7 +139,7 @@
 		Route::get('materiasasignadosv/{anho}/{grupo}/{id}','AsignacionController@listarMS');
 		Route::post('materiasasignadasc','AsignacionController@registrarMS');		
 		Route::get('materiasasignadasb/{id}', 'AsignacionController@borrarMS')->where(['id' => '[0-9]+']);
-		Route::post('ajustesS','UsersController@actualizarS');
+		Route::post('ajustesS','UsersController@actualizarSe');
 	});
 
 	Route::group(['prefix'=>'profesor', 'middleware' => 'auth'], function(){	
@@ -157,7 +157,7 @@
 		Route::post('notasc','NotasController@registrarNAP');	
 		Route::get('notasa/{idnota}', 'NotasController@profesorAN')->where(['id' => '[0-9]+']);
 		Route::post('notasado','NotasController@actualizarAS');
-		Route::post('ajustesP','UsersController@actualizarP');
+		Route::post('ajustesP','UsersController@actualizarPr');
 	});
 
 	Route::group(['prefix'=>'alumno', 'middleware' => 'auth'], function(){	

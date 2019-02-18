@@ -64,7 +64,7 @@
 						<div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">Colegio</span>
 						</div>
-						<select class="custom-select" name="idColegio">
+						<select multiple class="custom-select" name="idColegio">
 							<option selected>Seleccióne</option>
 							@foreach($colegios as $colegio)
 								<option value="{{ $colegio -> id }}">{{ $colegio -> razon_social }}</option>

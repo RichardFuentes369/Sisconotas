@@ -187,7 +187,7 @@ class UsersController extends Controller
         Flash::error("Se ha eliminado el profesor con DNI: " . $dni . " de forma correcta");
         return redirect('rector/profesoresl');
     }
-    public function actualizarR(Request $request){    
+    public function actualizarRe(Request $request){    
         $name = $request->input('name');
         $lastname = $request->input('lastname');  
         $email = $request->input('email');  
@@ -310,7 +310,7 @@ class UsersController extends Controller
         Flash::error("Se ha eliminado el profesor con DNI: " . $dni . " de forma correcta");
         return redirect('secretario/profesoresl');
     }
-    public function actualizarS(Request $request){    
+    public function actualizarSe(Request $request){    
         $name = $request->input('name');
         $lastname = $request->input('lastname');  
         $email = $request->input('email');  
@@ -347,7 +347,7 @@ class UsersController extends Controller
                                     AND anhos.anho = :varanho', ['vardni' => $dniProfesor, 'varanho' => $anho]);
         return view('Profesor.views.alumnos',compact('consulta'))->with('consultagrado',$consultagrado);
     }
-    public function actualizarP(Request $request){    
+    public function actualizarPr(Request $request){    
         $name = $request->input('name');
         $lastname = $request->input('lastname');  
         $email = $request->input('email');  

@@ -3,7 +3,7 @@
 		<th>ID</th>
 		<th>Año</th>
 		<th>Colegio</th>
-		<th colspan="3">Opciónes</th>
+		<th colspan="4">Opciónes</th>
 	</thead>
 	<tbody>
 		@foreach ($anhos as $anho)

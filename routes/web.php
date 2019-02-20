@@ -58,11 +58,6 @@
 		Route::get('rectoresa/{dni}', 'UsersController@usuariosA')->where(['dni' => '[0-9A-Za-z]+']);
 		Route::post('rectoresado','UsersController@actualizarR');
 		Route::get('rectoresb/{dni}', 'UsersController@borrarR')->where(['dni' => '[0-9A-Za-z]+']);
-		Route::get('porcentajesl','PorcentajesController@listarP');
-		Route::post('porcentajesc','PorcentajesController@registrarP');
-		Route::get('porcentajesa/{id}', 'PorcentajesController@porcentajesA')->where(['id' => '[0-9]+']);
-		Route::post('porcentajesado','PorcentajesController@actualizarP');
-		Route::get('porcentajesb/{id}', 'PorcentajesController@borrarP')->where(['id' => '[0-9]+']);
 		Route::post('ajustesA','UsersController@actualizarA');
 		
 	});

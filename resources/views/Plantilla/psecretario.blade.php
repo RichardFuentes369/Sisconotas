@@ -51,7 +51,7 @@
 										<button class="btn btn-block btn-outline-success fontGhoti subir2">
 											<i class="material-icons">calendar_today</i> Años
 										</button>
-									</form>
+									</form>	
 									<form action="{{ url('secretario')}}/{{ 'materiasl' }}" method="Get">
 										<button class="btn btn-block btn-outline-success fontGhoti subir2">
 											<i class="material-icons">list</i> Materias

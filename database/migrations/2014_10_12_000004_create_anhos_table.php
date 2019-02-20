@@ -18,12 +18,16 @@ class CreateAnhosTable extends Migration
             $table->string('anho');
             $table->date('fiprimersemestre');
             $table->date('ffprimersemestre');
+            $table->double('ppsemestre');
             $table->date('fisegundosemestre');
             $table->date('ffsegundosemestre');
+            $table->double('pssemestre');
             $table->date('fitercersemestre');
             $table->date('fftercersemestre');
+            $table->double('ptsemestre');
             $table->date('ficuartosemestre');
             $table->date('ffcuartosemestre');
+            $table->double('pcsemestre');
             $table->integer('colegio_id')->unsigned();
             $table->foreign('colegio_id')
                   ->references('id')

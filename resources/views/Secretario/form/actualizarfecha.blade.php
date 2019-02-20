@@ -15,7 +15,8 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="input-group-prepend">
-							   <span class="input-group-text" id="basic-addon1">Primer Periodo</span>
+							   	<span class="input-group-text" id="basic-addon1">Primer Periodo</span>							   	
+								<input type="number" class="form-control" min="0" max="100" name="ppsemestre" placeholder="% periodo" value="{{ $existe->ppsemestre }}">	
 							</div> <br>
 						    <div class="col-sm-10">
 								<input type="date" class="form-control" name="fiprimersemestre" value="{{ $existe->fiprimersemestre }}"><br>
@@ -24,7 +25,8 @@
 								<input type="date" class="form-control" name="ffprimersemestre" value="{{ $existe->ffprimersemestre }}"><br>
 							</div> 
 							<div class="input-group-prepend">
-							   <span class="input-group-text" id="basic-addon1">Segundo Periodo</span>
+								<span class="input-group-text" id="basic-addon1">Segundo Periodo</span>
+								<input type="number" class="form-control" min="0" max="100" name="pssemestre" placeholder="% periodo" value="{{ $existe->pssemestre }}">	
 							</div> <br>
 						    <div class="col-sm-10">
 								<input type="date" class="form-control" name="fisegundosemestre" value="{{ $existe->fisegundosemestre }}"><br>
@@ -35,7 +37,8 @@
 						</div>
 						<div class="col-sm-6">
 							<div class="input-group-prepend">
-							   <span class="input-group-text" id="basic-addon1">Tercer Periodo</span>
+								<span class="input-group-text" id="basic-addon1">Tercer Periodo</span>
+								<input type="number" class="form-control" min="0" max="100" name="ptsemestre" placeholder="% periodo" value="{{ $existe->ptsemestre }}">	
 							</div> <br>
 						    <div class="col-sm-10">
 								<input type="date" class="form-control" name="fitercersemestre" value="{{ $existe->fitercersemestre }}"><br>
@@ -44,7 +47,8 @@
 								<input type="date" class="form-control" name="fftercersemestre" value="{{ $existe->fitercersemestre }}"><br>
 							</div> 
 							<div class="input-group-prepend">
-							   <span class="input-group-text" id="basic-addon1">Cuarto Periodo</span>
+								<span class="input-group-text" id="basic-addon1">Cuarto Periodo</span>
+								<input type="number" class="form-control" min="0" max="100" name="pcsemestre" placeholder="% periodo" value="{{ $existe->pcsemestre }}">	
 							</div> <br>
 						    <div class="col-sm-10">
 								<input type="date" class="form-control" name="ficuartosemestre" value="{{ $existe->ficuartosemestre }}"><br>

@@ -44,11 +44,6 @@
 											<i class="material-icons">people</i> Rectores
 										</button>
 									</form>
-									<form action="{{ url('administrador')}}/{{ 'porcentajesl' }}" method="Get">
-										<button class="btn btn-block btn-outline-success fontGhoti subir2">
-											<i class="material-icons">gavel</i> Porcentajes
-										</button>
-									</form>
 									<hr>
 									<div class="col-sm-12">
 										<div class="row">

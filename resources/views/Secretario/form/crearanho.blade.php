@@ -15,7 +15,8 @@
 					<div class="row">
 						<div class="col-sm-6">
 							<div class="input-group-prepend">
-							   <span class="input-group-text" id="basic-addon1">Primer Periodo</span>
+								<span class="input-group-text" id="basic-addon1">Primer Periodo</span>
+								<input type="number" class="form-control" min="0" max="100" name="ppsemestre" placeholder="% periodo">	
 							</div> <br>
 						    <div class="col-sm-10">
 								<input type="date" class="form-control" name="fiprimersemestre"><br>
@@ -24,7 +25,8 @@
 								<input type="date" class="form-control" name="ffprimersemestre"><br>
 							</div> 
 							<div class="input-group-prepend">
-							   <span class="input-group-text" id="basic-addon1">Segundo Periodo</span>
+								<span class="input-group-text" id="basic-addon1">Segundo Periodo</span>
+								<input type="number" class="form-control" min="0" max="100" name="pssemestre" placeholder="% periodo">
 							</div> <br>
 						    <div class="col-sm-10">
 								<input type="date" class="form-control" name="fisegundosemestre"><br>
@@ -35,7 +37,8 @@
 						</div>
 						<div class="col-sm-6"> 
 							<div class="input-group-prepend">
-							   <span class="input-group-text" id="basic-addon1">Tercero Periodo</span>
+								<span class="input-group-text" id="basic-addon1">Tercero Periodo</span>
+								<input type="number" class="form-control" min="0" maxlength="100" name="ptsemestre" placeholder="% periodo">
 							</div> <br>
 						    <div class="col-sm-10">
 								<input type="date" class="form-control" name="fitercersemestre"><br>
@@ -44,7 +47,8 @@
 								<input type="date" class="form-control" name="fftercersemestre"><br>
 							</div>
 							<div class="input-group-prepend">
-							   <span class="input-group-text" id="basic-addon1">Cuarto Periodo</span>
+								<span class="input-group-text" id="basic-addon1">Cuarto Periodo</span>
+								<input type="number" class="form-control" min="0" maxlength="100" name="pcsemestre" placeholder="% periodo">
 							</div> <br>
 						    <div class="col-sm-10">
 								<input type="date" class="form-control" name="ficuartosemestre"><br>

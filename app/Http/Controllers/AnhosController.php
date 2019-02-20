@@ -36,14 +36,19 @@ class AnhosController extends Controller
             $a->anho = $request->input('anho');
             $a->fiprimersemestre = $request->input('fiprimersemestre');
             $a->ffprimersemestre = $request->input('ffprimersemestre');
+            $a->ppsemestre = $request->input('ppsemestre');
             $a->fisegundosemestre = $request->input('fisegundosemestre');
             $a->ffsegundosemestre = $request->input('ffsegundosemestre');
+            $a->pssemestre = $request->input('pssemestre');
             $a->fitercersemestre = $request->input('fitercersemestre');
             $a->fftercersemestre = $request->input('fftercersemestre');
+            $a->ptsemestre = $request->input('ptsemestre');
             $a->ficuartosemestre = $request->input('ficuartosemestre');
             $a->ffcuartosemestre = $request->input('ffcuartosemestre');
+            $a->pcsemestre = $request->input('pcsemestre');
             $a->colegio_id = Auth::user()->colegios->id;
             $a->save();
+
             Flash::success("Se ha registrado el año: ".$a->anho. " de forma correcta");
             return redirect('secretario/anhosl');
         }else{
@@ -62,13 +67,17 @@ class AnhosController extends Controller
         $idanho = $request->input('idanho');
         $fi1 = $request->input('fiprimersemestre');
         $ff1 = $request->input('ffprimersemestre');
+        $pf1 = $request->input('ppsemestre');
         $fi2 = $request->input('fisegundosemestre');
         $ff2 = $request->input('ffsegundosemestre');
+        $pf2 = $request->input('pssemestre');
         $fi3 = $request->input('fitercersemestre');
         $ff3 = $request->input('fftercersemestre');
+        $pf3 = $request->input('ptsemestre');
         $fi4 = $request->input('ficuartosemestre');
         $ff4 = $request->input('ffcuartosemestre');
-        $actualizar = DB::UPDATE('UPDATE Anhos set fiprimersemestre = :varfi1, ffprimersemestre = :varff1, fisegundosemestre = :varfi2, ffsegundosemestre = :varff2, fitercersemestre = :varfi3, fftercersemestre = :varff3, ficuartosemestre = :varfi4, ffcuartosemestre = :varff4 WHERE id = :varanho',['varfi1' => $fi1,'varff1' => $ff1,'varfi2' => $fi2,'varff2' => $ff2,'varfi3' => $fi3,'varff3' => $ff3,'varfi4' => $fi4,'varff4' => $ff4,'varanho' => $idanho]);
+        $pf4 = $request->input('pcsemestre');
+        $actualizar = DB::UPDATE('UPDATE Anhos set fiprimersemestre = :varfi1, ffprimersemestre = :varff1, ppsemestre = :varpf1, fisegundosemestre = :varfi2, ffsegundosemestre = :varff2, pssemestre = :varpf2, fitercersemestre = :varfi3, fftercersemestre = :varff3, ptsemestre = :varpf3, ficuartosemestre = :varfi4, ffcuartosemestre = :varff4, pcsemestre = :varpf4 WHERE id = :varanho',['varfi1' => $fi1,'varff1' => $ff1,'varpf1' => $pf1,'varfi2' => $fi2,'varff2' => $ff2,'varpf2' => $pf2,'varfi3' => $fi3,'varff3' => $ff3,'varpf3' => $pf3,'varfi4' => $fi4,'varff4' => $ff4,'varpf4' => $pf4,'varanho' => $idanho]);
         Flash::success("Se han actualizado las fechas con id año: ".$idanho);
         return redirect('secretario/anhosl');
     }

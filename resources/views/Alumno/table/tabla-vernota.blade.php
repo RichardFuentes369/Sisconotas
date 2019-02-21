@@ -1,12 +1,14 @@
-<table border="0" class="table table-responsive table-hover" style="text-align: center">
+<table id="tabla" border="0" class="table table-responsive table-hover" style="text-align: center">
 	<thead class="tableth">
+		@foreach($consultaporcentajes as $consul2)
 		<th>ID</th>
-		<th>Nota 1</th>
-		<th>Nota 2</th>
-		<th>Nota 3</th>
-		<th>Nota 4</th>
+		<th id="porcentaje1">Nota 1 <br>({{ $consul2 -> ppsemestre }}%)</th>
+		<th id="porcentaje2">Nota 2 <br>({{ $consul2 -> pssemestre }}%)</th></th>
+		<th id="porcentaje3">Nota 3 <br>({{ $consul2 -> ptsemestre }}%)</th></th>
+		<th id="porcentaje4">Nota 4 <br>({{ $consul2 -> pcsemestre }}%)</th></th>
 		<th>Habilitacion</th>
 		<th>Total</th>
+		@endforeach
 	</thead>
 	<tbody>
 		@foreach ($consultanotas as $consul)
@@ -17,9 +19,8 @@
 				<td id="nota3">{{ $consul -> nota3 }}</td>
 				<td id="nota4">{{ $consul -> nota4 }}</td>				
 				<td id="habilitacion">{{ $consul -> habilitacion }}</td>
+		@endforeach
 				<td id="total"></td>
 			</tr>
-		@endforeach
 	</tbody>	
 </table>		
-

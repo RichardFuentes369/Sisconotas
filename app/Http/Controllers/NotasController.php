@@ -41,6 +41,9 @@ class NotasController extends Controller
     }
     /*Listar notas profesor*/
     public function listarND(Request $request,$grado_id,$id_materia,$nombre_materia,$dni){
+        $fecha = Carbon::parse($request->fecha);
+        $anho = $fecha->year;
+        $colegio_id = Auth::user()->colegio_id;
         $consulta_idalumno =DB::SELECT('SELECT id FROM l_alumnos WHERE dni = :vardni',['vardni' => $dni]); 
         foreach ($consulta_idalumno as $idal){
             $ultimoid=$idal->id;
@@ -51,7 +54,9 @@ class NotasController extends Controller
         foreach ($consulta_alumnoid as $id){
             $idalumno=$id->id;
         }
-        return view('Profesor.views.misnotas',compact('consulta_notas'))->with('nombre_materia',$nombre_materia)->with('id_materia',$id_materia)->with('idalumno',$idalumno)->with('grado_id',$grado_id);
+        $consultaporcentajes = DB::SELECT('SELECT anhos.ppsemestre,anhos.pssemestre,anhos.ptsemestre,anhos.pcsemestre FROM anhos WHERE anhos.anho = :varanho AND anhos.colegio_id = :varcolegio',['varanho' => $anho,'varcolegio' => $colegio_id]);
+
+        return view('Profesor.views.misnotas',compact('consulta_notas'))->with('nombre_materia',$nombre_materia)->with('id_materia',$id_materia)->with('idalumno',$idalumno)->with('grado_id',$grado_id)->with('consultaporcentajes',$consultaporcentajes);
     }
     /*actualizar nota */
     public function profesorAN(Request $request, $id){
@@ -133,7 +138,9 @@ class NotasController extends Controller
                 FROM l_notas
                 WHERE l_notas.grado_id = :vargradoid AND l_notas.lmateria_id = :varmateriaid AND l_notas.lalumno_id = :varalumnoid',['vargradoid' => $gradoid, 'varmateriaid' => $materia_id, 'varalumnoid' => $alumnoid]);
 
-        return view('Alumno.views.notas-materia',compact('consultanotas'))->with('nombre_materia',$nombre_materia);
+        $consultaporcentajes = DB::SELECT('SELECT anhos.ppsemestre,anhos.pssemestre,anhos.ptsemestre,anhos.pcsemestre FROM anhos WHERE anhos.anho = :varanho AND anhos.colegio_id = :varcolegio',['varanho' => $anho,'varcolegio' => $colegio_id]);
+
+        return view('Alumno.views.notas-materia',compact('consultanotas'))->with('nombre_materia',$nombre_materia)->with('consultaporcentajes',$consultaporcentajes);
     }
 
 }

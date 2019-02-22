@@ -1,7 +1,7 @@
 @extends('Plantilla.psecretario')
 <br>
 @section('content')
-	<div class="container">
+	<div class="container contenidoS">
 		<div class="col-sm-12">
 			<div class="row">
 				<div class="col-sm-10">

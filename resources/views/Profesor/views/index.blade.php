@@ -1,7 +1,7 @@
 @extends('Plantilla.pprofesor')
 <br>
 @section('content')
-	<div class="container">
+	<div class="container contenidoP">
 		<br>
 		<h3>Bienvenido: {{ Auth::user()->name }} {{ Auth::user()->lastname }}</h3>
 		<hr>

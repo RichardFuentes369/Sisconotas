@@ -2,7 +2,6 @@
 	<thead class="tableth">
 		<th>DNI</th>
 		<th>Nombre</th>
-		<th>Apellidos</th>
 		<th>Colegio</th>
 		<th>Correo</th>
 		<th colspan="3">Opciónes</th>

@@ -1,7 +1,7 @@
 @extends('Plantilla.padministrador')
 <br>
 @section('content')
-	<div class="container">
+	<div class="container contenidoA">
 		<div class="col-sm-12">
 			<div class="row">
 				<div class="col-sm-10">

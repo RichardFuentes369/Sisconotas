@@ -16,8 +16,12 @@
   <body class="background">
 
   	<div class="header subir">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		  <h3><a href="{{ url('secretario')}}/{{ 'bienvenido' }}"><i class="fonttitle">Sisconotas</i></a></h3>
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<form action="{{ url('secretario')}}/{{ 'bienvenido' }}" method="Get">
+				<button class="btn btn-block btn-success fonttitlep">
+					Sisconotas
+				</button>
+			</form>
 		</nav>
 	</div>
 
@@ -28,7 +32,7 @@
 				<div class="col-sm-3">
 					<div class="col-sm-12">
 						<br>
-						<div class="card">
+						<div class="card menuS">
 							<div class="containe">
 								<div class="col-sm-1"></div>
 								<div class="col-sm 2">
@@ -91,7 +95,7 @@
 	
 	<br>
 	
-	<div class="footer bg-light">
+	<div class="footer">
 		  <!-- Copyright -->
 		  <div class="footer-copyright text-center py-3">Ingeniero Javier Ricardo Baron Fuentes <br> © 2019 
 		  </div>

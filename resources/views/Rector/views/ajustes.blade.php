@@ -1,7 +1,7 @@
 @extends('Plantilla.prector')
 <br>
 @section('content')
-	<div class="container">
+	<div class="container contenidoR">
 		<br>
 		<h3>Ajustes</h3>
 		<hr>

@@ -6,6 +6,7 @@
 
 @section('content')
 	<div class="container contenidoI">
+		<br>
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="row">
@@ -22,4 +23,3 @@
 		</div>
 	</div>
 @endsection
-

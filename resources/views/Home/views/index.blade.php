@@ -12,8 +12,6 @@
 				@include('Home.form.form-paginainicial')
 			</div>
 		</div>
-		<br>
 	</div>
 @endsection
-
 

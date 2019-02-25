@@ -1,13 +1,9 @@
 .fonttitlep{
 	font-family: 'Spicy Rice', cursive;
-	font-size: 25px;
+	font-size: 35px;
 	font-weight: bold;
-	border-radius: 43px 15px 200px 0px;
-	-moz-border-radius: 43px 15px 200px 0px;
-	-webkit-border-radius: 43px 15px 200px 0px;
-	border: 0px solid #000000;
-	-webkit-text-fill-color: withe;
-	-webkit-text-stroke: 1px black;
+	-webkit-text-fill-color: #6BCCED;
+	-webkit-text-stroke: 1px #170909;	
 }
 /*panel de control*/
 .fontGhoti{
@@ -23,7 +19,7 @@
 }
 /*Tabla de resultados*/
 .tableth{
-	background-color: #AD0728;
+	background-color: #42B9D3;
 	color:#F5F5F6;
 }
 /*Subir el banner*/
@@ -36,7 +32,7 @@
 }
 /*Fondo del sistema*/
 .background{
-  background-image: linear-gradient(#FFFFFC,#7FB692);
+	background-color: #EBEBEB;
 }
 /*Boton añadir*/
 .botonanadir{
@@ -67,7 +63,6 @@
 
 }
 .menuI{
-
 }
 .menuP{
 
@@ -80,7 +75,7 @@
 }
 /*Color Contenido*/
 .contenidoA{
-
+	
 }
 .contenidoAl{
 

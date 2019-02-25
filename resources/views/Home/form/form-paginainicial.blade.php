@@ -1,4 +1,4 @@
-<div class="jumbotron text-center">
+<div class="jumbotron text-center" style="background-color: #FFFFFF">
   <h1>Bienvenidos</h1>
   <p>A nuestro sistemas de notas escolar</p> 
 </div>

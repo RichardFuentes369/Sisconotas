@@ -20,7 +20,7 @@
 				<td id="nota4">{{ $consul -> nota4 }}</td>				
 				<td id="habilitacion">{{ $consul -> habilitacion }}</td>
 		@endforeach
-				<td id="total" style="background-color: #8F8F8F;color: #000000;border-radius: 16px"></td>
+				<td id="total" style="background-color: #8F8F8F;color: #000000;border-radius: 16px;"></td>
 			</tr>
 	</tbody>	
 </table>		
@@ -31,6 +31,7 @@
 	var n2 = document.getElementById("nota2").innerHTML;
 	var n3 = document.getElementById("nota3").innerHTML;
 	var n4 = document.getElementById("nota4").innerHTML;
+	var h = document.getElementById("habilitacion").innerHTML;
 	var p1 = document.getElementById("porcentaje1").innerHTML;
 	var p2 = document.getElementById("porcentaje2").innerHTML;
 	var p3 = document.getElementById("porcentaje3").innerHTML;
@@ -57,5 +58,11 @@
 	}else{
 		TotalSuma = "No hay notas registradas";
 	}
+
+	if(h !== ""){
+		TotalSuma = (parseInt(TotalSuma)*0.50 + parseInt(h)*0.50);
+	}
 	document.getElementById('total').innerHTML = TotalSuma;
 </script>
+
+

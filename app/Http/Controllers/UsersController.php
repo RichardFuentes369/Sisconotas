@@ -41,7 +41,7 @@ class UsersController extends Controller
             Flash::success("Se ha registrado el rector con dni: " .$u->dni." y correo: ".$u->email. " de forma correcta");
             return redirect('administrador/rectoresl');
         }else{
-            Flash::error("No se pudo registrar el rector con dni: " .$u->dni);
+            Flash::error("No se pudo registrar el rector con dni: " .$dni);
             return redirect('administrador/rectoresl');
         }
     }
@@ -93,7 +93,7 @@ class UsersController extends Controller
         $ultimo = DB::SELECT('SELECT * FROM Users order by id desc limit 1');
         foreach ($ultimo as $ult){
             $ultimoid=$ult->id;
-        }
+        }        
         $existe = DB::SELECT('SELECT * FROM Users WHERE email = :varcorreo or dni = :vardni',['varcorreo' => $email, 'vardni' => $dni]);
         if($existe == false){
             $u = new User();
@@ -112,7 +112,7 @@ class UsersController extends Controller
             Flash::success("Se ha registrado la secretaria con dni: " .$u->dni." y correo: ".$u->email. " de forma correcta");
             return redirect('rector/secretariasl');
         }else{
-            Flash::error("No se pudo registrar la secretaria con dni: " .$u->dni);
+            Flash::error("No se pudo registrar la secretaria con dni: " .$dni);
             return redirect('rector/secretariasl');
         }
     }
@@ -164,7 +164,7 @@ class UsersController extends Controller
             Flash::success("Se ha registrado el profesor con dni: " .$u->dni." y correo: ".$u->email. " de forma correcta");
             return redirect('rector/profesoresl');
         }else{
-            Flash::error("No se pudo registrar el profesor con dni: " .$u->dni);
+            Flash::error("No se pudo registrar el profesor con dni: " .$dni);
             return redirect('rector/profesoresl');
         }
     }     

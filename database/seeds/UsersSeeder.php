@@ -28,7 +28,7 @@ class UsersSeeder extends Seeder
 
         $user1->save();
 
-        $user2 = User::create([
+        /*$user2 = User::create([
            'id'        => 2,
            'name'      => 'Jorge Enrique',
            'lastname'      => 'Baron Fuentes',
@@ -250,7 +250,7 @@ class UsersSeeder extends Seeder
            'colegio_id' => 2,
            ]);
 
-        $user15->save();
+        $user15->save();*/
 
     }
 }

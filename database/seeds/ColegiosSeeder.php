@@ -12,6 +12,7 @@ class ColegiosSeeder extends Seeder
      */
     public function run()
     {
+        /**
         $colegio0 = colegios::create([
     		'id'		=> 0,
             'nit'      => '*-***********',
@@ -67,5 +68,6 @@ class ColegiosSeeder extends Seeder
             'correo' => 'colegiometropolitanodelsur@gmail.com',
             ]);
         $colegio3->save();
+        */
     }
 }

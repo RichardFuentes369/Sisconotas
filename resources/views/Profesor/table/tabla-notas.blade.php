@@ -53,19 +53,19 @@
 	
 	if(n1 != ""){
 		TotalSuma = (((parseFloat(n1) * parseInt(p1))/100));
-		RedondeandoSuma = TotalSuma.toFixed(1);
+		RedondeandoSuma = TotalSuma.toFixed(2);
 		if(n2 != ""){
 			TotalSuma = (((parseFloat(n1) * parseInt(p1))/100)+((parseFloat(n2) * parseInt(p2))/100));
-			RedondeandoSuma = TotalSuma.toFixed(1);
+			RedondeandoSuma = TotalSuma.toFixed(2);
 			if(n3 != ""){
 				TotalSuma = (((parseFloat(n1) * parseInt(p1))/100)+((parseFloat(n2) * parseInt(p2))/100)+((parseFloat(n3) * parseInt(p3))/100));
-				RedondeandoSuma = TotalSuma.toFixed(1);
+				RedondeandoSuma = TotalSuma.toFixed(2);
 				if(n4 != ""){
 					TotalSuma = (((parseFloat(n1) * parseInt(p1))/100)+((parseFloat(n2) * parseInt(p2))/100)+((parseFloat(n3) * parseInt(p3))/100)+((parseFloat(n4) * parseInt(p4))/100));
-					RedondeandoSuma = TotalSuma.toFixed(1);
+					RedondeandoSuma = TotalSuma.toFixed(2);
 				}else{
 					TotalSuma = (((parseFloat(n1) * parseInt(p1))/100)+((parseFloat(n2) * parseInt(p2))/100)+((parseFloat(n3) * parseInt(p3))/100));	
-					RedondeandoSuma = TotalSuma.toFixed(1);
+					RedondeandoSuma = TotalSuma.toFixed(2);
 				}
 			}else{
 				TotalSuma = (((parseFloat(n1) * parseInt(p1))/100)+((parseFloat(n2) * parseInt(p2))/100));
@@ -73,7 +73,7 @@
 			}
 		}else{
 			TotalSuma = (((parseFloat(n1) * parseInt(p1))/100));
-			RedondeandoSuma = TotalSuma.toFixed(1);
+			RedondeandoSuma = TotalSuma.toFixed(2);
 		}
 	}else{
 		RedondeandoSuma = "No hay notas registradas";
@@ -84,9 +84,7 @@
 		Porcentajeh = (parseInt(ph))/100;
 		TotalSuma = parseFloat(CalcularPorcentaje)*TotalSuma 
 					+ parseFloat(h)*parseFloat(Porcentajeh);
-		RedondeandoSuma = TotalSuma.toFixed(1);
+		RedondeandoSuma = TotalSuma.toFixed(2);
 	}
 	document.getElementById('total').innerHTML = RedondeandoSuma;
 </script>
-
-

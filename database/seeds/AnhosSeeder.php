@@ -12,7 +12,7 @@ class AnhosSeeder extends Seeder
      */
     public function run()
     {
-        /*$Anhos0 = Anhos::create([
+        $Anhos0 = Anhos::create([
     		'id'		=> 1,
             'anho'      => '2019',
     		'colegio_id' => '1',
@@ -28,7 +28,10 @@ class AnhosSeeder extends Seeder
             'ficuartosemestre' => '25-09-2019',
             'ffcuartosemestre' => '25-11-2019',
             'pcsemestre' => 25.0,
+            'fihabilitacion' => '25-11-2019',
+            'ffhabilitacion' => '02-12-2019',
+            'phabilitacion' => 25.0,
         	]);
-        $Anhos0->save();*/
+        $Anhos0->save();
     }
 }

@@ -46,6 +46,9 @@ class AnhosController extends Controller
             $a->ficuartosemestre = $request->input('ficuartosemestre');
             $a->ffcuartosemestre = $request->input('ffcuartosemestre');
             $a->pcsemestre = $request->input('pcsemestre');
+            $a->fihabilitacion = $request->input('fihabilitacion');
+            $a->ffhabilitacion = $request->input('ffhabilitacion');
+            $a->phabilitacion = $request->input('phabilitacion');
             $a->colegio_id = Auth::user()->colegios->id;
             $a->save();
 
@@ -77,7 +80,10 @@ class AnhosController extends Controller
         $fi4 = $request->input('ficuartosemestre');
         $ff4 = $request->input('ffcuartosemestre');
         $pf4 = $request->input('pcsemestre');
-        $actualizar = DB::UPDATE('UPDATE Anhos set fiprimersemestre = :varfi1, ffprimersemestre = :varff1, ppsemestre = :varpf1, fisegundosemestre = :varfi2, ffsegundosemestre = :varff2, pssemestre = :varpf2, fitercersemestre = :varfi3, fftercersemestre = :varff3, ptsemestre = :varpf3, ficuartosemestre = :varfi4, ffcuartosemestre = :varff4, pcsemestre = :varpf4 WHERE id = :varanho',['varfi1' => $fi1,'varff1' => $ff1,'varpf1' => $pf1,'varfi2' => $fi2,'varff2' => $ff2,'varpf2' => $pf2,'varfi3' => $fi3,'varff3' => $ff3,'varpf3' => $pf3,'varfi4' => $fi4,'varff4' => $ff4,'varpf4' => $pf4,'varanho' => $idanho]);
+        $fih = $request->input('fihabilitacion');
+        $ffh = $request->input('ffhabilitacion');
+        $ph  = $request->input('phabilitacion');
+        $actualizar = DB::UPDATE('UPDATE Anhos set fiprimersemestre = :varfi1, ffprimersemestre = :varff1, ppsemestre = :varpf1, fisegundosemestre = :varfi2, ffsegundosemestre = :varff2, pssemestre = :varpf2, fitercersemestre = :varfi3, fftercersemestre = :varff3, ptsemestre = :varpf3, ficuartosemestre = :varfi4, ffcuartosemestre = :varff4, pcsemestre = :varpf4, fihabilitacion = :varfih, ffhabilitacion = :varffh, phabilitacion = :varph WHERE id = :varanho',['varfi1' => $fi1,'varff1' => $ff1,'varpf1' => $pf1,'varfi2' => $fi2,'varff2' => $ff2,'varpf2' => $pf2,'varfi3' => $fi3,'varff3' => $ff3,'varpf3' => $pf3,'varfi4' => $fi4,'varff4' => $ff4,'varpf4' => $pf4,'varfih' => $fih,'varffh' => $ffh,'varph' => $ph,'varanho' => $idanho]);
         Flash::success("Se han actualizado las fechas con id año: ".$idanho);
         return redirect('secretario/anhosl');
     }

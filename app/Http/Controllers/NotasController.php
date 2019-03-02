@@ -54,7 +54,8 @@ class NotasController extends Controller
         foreach ($consulta_alumnoid as $id){
             $idalumno=$id->id;
         }
-        $consultaporcentajes = DB::SELECT('SELECT anhos.ppsemestre,anhos.pssemestre,anhos.ptsemestre,anhos.pcsemestre FROM anhos WHERE anhos.anho = :varanho AND anhos.colegio_id = :varcolegio',['varanho' => $anho,'varcolegio' => $colegio_id]);
+        $consultaporcentajes = DB::SELECT('SELECT anhos.ppsemestre,anhos.pssemestre,anhos.ptsemestre,anhos.pcsemestre,
+            anhos.phabilitacion FROM anhos WHERE anhos.anho = :varanho AND anhos.colegio_id = :varcolegio',['varanho' => $anho,'varcolegio' => $colegio_id]);
 
         return view('Profesor.views.misnotas',compact('consulta_notas'))->with('nombre_materia',$nombre_materia)->with('id_materia',$id_materia)->with('idalumno',$idalumno)->with('grado_id',$grado_id)->with('consultaporcentajes',$consultaporcentajes);
     }
@@ -138,7 +139,7 @@ class NotasController extends Controller
                 FROM l_notas
                 WHERE l_notas.grado_id = :vargradoid AND l_notas.lmateria_id = :varmateriaid AND l_notas.lalumno_id = :varalumnoid',['vargradoid' => $gradoid, 'varmateriaid' => $materia_id, 'varalumnoid' => $alumnoid]);
 
-        $consultaporcentajes = DB::SELECT('SELECT anhos.ppsemestre,anhos.pssemestre,anhos.ptsemestre,anhos.pcsemestre FROM anhos WHERE anhos.anho = :varanho AND anhos.colegio_id = :varcolegio',['varanho' => $anho,'varcolegio' => $colegio_id]);
+        $consultaporcentajes = DB::SELECT('SELECT anhos.ppsemestre,anhos.pssemestre,anhos.ptsemestre,anhos.pcsemestre,anhos.phabilitacion FROM anhos WHERE anhos.anho = :varanho AND anhos.colegio_id = :varcolegio',['varanho' => $anho,'varcolegio' => $colegio_id]);
 
         return view('Alumno.views.notas-materia',compact('consultanotas'))->with('nombre_materia',$nombre_materia)->with('consultaporcentajes',$consultaporcentajes);
     }

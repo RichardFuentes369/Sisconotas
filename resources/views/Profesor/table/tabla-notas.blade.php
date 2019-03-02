@@ -4,11 +4,11 @@
 	<thead class="tableth">
 		@foreach($consultaporcentajes as $consul2)
 		<th>ID</th>
-		<th id="porcentaje1">{{ $consul2 -> ppsemestre }}</th>
+		<th id="porcentaje1">{{ $consul2 -> ppsemestre }}</th>	
 		<th id="porcentaje2">{{ $consul2 -> pssemestre }}</th>
 		<th id="porcentaje3">{{ $consul2 -> ptsemestre }}</th>
 		<th id="porcentaje4">{{ $consul2 -> pcsemestre }}</th>
-		<th>Habilitacion</th>
+		<th id="phabilitacion">{{ $consul2 -> phabilitacion }}</th>
 		<th>Total</th>
 		<th>Opción</th>
 		@endforeach
@@ -37,6 +37,8 @@
 
 <script>
 	var TotalSuma = 0;
+	var CalcularPorcentaje = 0;
+	var Porcentajeh = 0;
 	var n1 = document.getElementById("nota1").innerHTML;
 	var n2 = document.getElementById("nota2").innerHTML;
 	var n3 = document.getElementById("nota3").innerHTML;
@@ -46,31 +48,35 @@
 	var p2 = document.getElementById("porcentaje2").innerHTML;
 	var p3 = document.getElementById("porcentaje3").innerHTML;
 	var p4 = document.getElementById("porcentaje4").innerHTML;
+	var ph = document.getElementById("phabilitacion").innerHTML;
 
 	
 	if(n1 != ""){
-		TotalSuma = (((parseInt(n1) * parseInt(p1))/100));
+		TotalSuma = (((parseFloat(n1) * parseInt(p1))/100));
 		if(n2 != ""){
-			TotalSuma = (((parseInt(n1) * parseInt(p1))/100)+((parseInt(n2) * parseInt(p2))/100));
+			TotalSuma = (((parseFloat(n1) * parseInt(p1))/100)+((parseFloat(n2) * parseInt(p2))/100));
 			if(n3 != ""){
-				TotalSuma = (((parseInt(n1) * parseInt(p1))/100)+((parseInt(n2) * parseInt(p2))/100)+((parseInt(n3) * parseInt(p3))/100));
+				TotalSuma = (((parseFloat(n1) * parseInt(p1))/100)+((parseFloat(n2) * parseInt(p2))/100)+((parseFloat(n3) * parseInt(p3))/100));
 				if(n4 != ""){
-					TotalSuma = (((parseInt(n1) * parseInt(p1))/100)+((parseInt(n2) * parseInt(p2))/100)+((parseInt(n3) * parseInt(p3))/100)+((parseInt(n4) * parseInt(p4))/100));
+					TotalSuma = (((parseFloat(n1) * parseInt(p1))/100)+((parseFloat(n2) * parseInt(p2))/100)+((parseFloat(n3) * parseInt(p3))/100)+((parseFloat(n4) * parseInt(p4))/100));
 				}else{
-					TotalSuma = (((parseInt(n1) * parseInt(p1))/100)+((parseInt(n2) * parseInt(p2))/100)+((parseInt(n3) * parseInt(p3))/100));	
+					TotalSuma = (((parseFloat(n1) * parseInt(p1))/100)+((parseFloat(n2) * parseInt(p2))/100)+((parseFloat(n3) * parseInt(p3))/100));	
 				}
 			}else{
-				TotalSuma = (((parseInt(n1) * parseInt(p1))/100)+((parseInt(n2) * parseInt(p2))/100));
+				TotalSuma = (((parseFloat(n1) * parseInt(p1))/100)+((parseFloat(n2) * parseInt(p2))/100));
 			}
 		}else{
-			TotalSuma = (((parseInt(n1) * parseInt(p1))/100));
+			TotalSuma = (((parseFloat(n1) * parseInt(p1))/100));
 		}
 	}else{
 		TotalSuma = "No hay notas registradas";
 	}
 
 	if(h !== ""){
-		TotalSuma = (parseInt(TotalSuma)*0.50 + parseInt(h)*0.50);
+		CalcularPorcentaje = (100 - parseInt(ph))/100;
+		Porcentajeh = (parseInt(ph))/100;
+		TotalSuma = parseFloat(CalcularPorcentaje)*TotalSuma 
+					+ parseFloat(h)*parseFloat(Porcentajeh);
 	}
 	document.getElementById('total').innerHTML = TotalSuma;
 </script>

@@ -28,6 +28,9 @@ class CreateAnhosTable extends Migration
             $table->date('ficuartosemestre');
             $table->date('ffcuartosemestre');
             $table->double('pcsemestre');
+            $table->date('fihabilitacion');
+            $table->date('ffhabilitacion');
+            $table->double('phabilitacion');
             $table->integer('colegio_id')->unsigned();
             $table->foreign('colegio_id')
                   ->references('id')

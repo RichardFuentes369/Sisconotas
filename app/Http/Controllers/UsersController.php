@@ -235,7 +235,7 @@ class UsersController extends Controller
             Flash::success("Se ha registrado el profesor con dni: " .$u->dni." y correo: ".$u->email. " de forma correcta");
             return redirect('secretario/profesoresl');
         }else{
-            Flash::error("No se pudo registrar el profesor con dni: " .$u->dni);
+            Flash::error("No se pudo registrar el profesor con dni: " .$dni);
             return redirect('secretario/profesoresl');
         }
     }     
@@ -282,7 +282,7 @@ class UsersController extends Controller
             Flash::success("Se ha registrado el profesor con dni: " .$u->dni." y correo: ".$u->email. " de forma correcta");
             return redirect('secretario/alumnosl');
         }else{
-            Flash::error("No se pudo registrar el profesor con dni: " .$u->dni);
+            Flash::error("No se pudo registrar el profesor con dni: " .$dni);
             return redirect('secretario/alumnosl');
         }
     }     

@@ -57,6 +57,22 @@
 								<input type="date" class="form-control" name="ffcuartosemestre" value="{{ $existe->ffcuartosemestre }}"><br>
 							</div>
 						</div>
+						<div class="col-sm-12"> 
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">Habilitación</span>
+								<input type="number" class="form-control" min="0" maxlength="100" name="phabilitacion" placeholder="% habilitacion" value="{{ $existe->phabilitacion }}">
+							</div> <br>
+							<div class="row">
+							    <div class="col-sm-6">
+									<span class="input-group-text" id="basic-addon1">Fecha Inicio</span>
+									<input type="date" class="form-control" name="fihabilitacion" value="{{ $existe->fihabilitacion }}"><br>
+								</div>
+								<div class="col-sm-6">
+									<span class="input-group-text" id="basic-addon1">Fecha Fin</span>
+									<input type="date" class="form-control" name="ffhabilitacion" value="{{ $existe->ffhabilitacion }}"><br>
+								</div>								
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="col-sm-12">

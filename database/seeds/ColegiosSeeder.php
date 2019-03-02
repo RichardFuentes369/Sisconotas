@@ -26,7 +26,7 @@ class ColegiosSeeder extends Seeder
         	]);
         $colegio0->save();
 
-        /*$colegio1 = colegios::create([
+        $colegio1 = colegios::create([
     		'id'		=> 1,
             'nit'      => '1-00000001',
     		'razon_social'		=> 'Colegio Gabriela Mistral',
@@ -66,6 +66,6 @@ class ColegiosSeeder extends Seeder
             'telefono' => '6792500',
             'correo' => 'colegiometropolitanodelsur@gmail.com',
             ]);
-        $colegio3->save();*/
+        $colegio3->save();
     }
 }

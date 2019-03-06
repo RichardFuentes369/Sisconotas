@@ -45,6 +45,16 @@
 				</div>
 				<div class="col-sm-12">
 					<div class="row">
+						<div class="col-sm-3">
+							{{ Form::label('name','Contraseña', array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
+						</div>
+						<div class="col-sm-8" id="show_hide_password">
+							<input type="text" class="form-control" name="password" id="password"><br>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12">
+					<div class="row">
 						<div class="col-sm-3"></div>
 						<div class="col-sm-8">
 							{{ Form::submit('Actualizar',array('class'=>'btn btn-success botonejecutarfuncion')) }}

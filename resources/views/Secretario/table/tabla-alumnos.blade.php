@@ -36,4 +36,11 @@
 		@endforeach
 	</tbody>	
 </table>		
-{!! $alumnos->render() !!}	
+<div class="col-sm-12">
+	<div class="row">
+		<div class="col-sm-5"></div>
+		<div class="col-sm-5"></div>
+		<div class="col-sm-2">
+			{{ $alumnos->links( "pagination::bootstrap-4") }}</div>
+	</div>
+</div>

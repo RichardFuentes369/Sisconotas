@@ -54,8 +54,15 @@ class UsersController extends Controller
         $name = $request->input('name');
         $lastname = $request->input('lastname');
         $email = $request->input('email');
-        $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo 
+        $password = $request->input('password');
+        $passwd = bcrypt($password);
+        if($password == ''){
+            $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo 
             WHERE dni = :vardni',['varname' => $name,'varlastname' => $lastname,'varcorreo' => $email,'vardni' =>$dni]);
+        }else{
+            $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo, password = :varpassword 
+            WHERE dni = :vardni',['varname' => $name,'varlastname' => $lastname,'varcorreo' => $email,'vardni' =>$dni,'varpassword' => $passwd]);
+        }
         Flash::success("Se ha actualizado el rector con dni: " .$dni);
         return redirect('administrador/rectoresl');
     }
@@ -125,9 +132,16 @@ class UsersController extends Controller
         $name = $request->input('name');
         $lastname = $request->input('lastname');
         $email = $request->input('email');
-        $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo 
+        $password = $request->input('password');
+        $passwd = bcrypt($password);
+        if($password == ''){
+            $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo 
             WHERE dni = :vardni',['varname' => $name,'varlastname' => $lastname,'varcorreo' => $email,'vardni' =>$dni]);
-        Flash::success("Se ha actualizado el rector con dni: " .$dni);
+        }else{
+            $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo, password = :varpassword 
+            WHERE dni = :vardni',['varname' => $name,'varlastname' => $lastname,'varcorreo' => $email,'vardni' =>$dni,'varpassword' => $passwd]);
+        }
+        Flash::success("Se ha actualizado el secretario con dni: " .$dni);
         return redirect('rector/secretariasl');
     }  
     public function borrarS($dni){
@@ -177,9 +191,16 @@ class UsersController extends Controller
         $name = $request->input('name');
         $lastname = $request->input('lastname');
         $email = $request->input('email');
-        $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo 
+        $password = $request->input('password');
+        $passwd = bcrypt($password);
+        if($password == ''){
+            $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo 
             WHERE dni = :vardni',['varname' => $name,'varlastname' => $lastname,'varcorreo' => $email,'vardni' =>$dni]);
-        Flash::success("Se ha actualizado el rector con dni: " .$dni);
+        }else{
+            $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo, password = :varpassword 
+            WHERE dni = :vardni',['varname' => $name,'varlastname' => $lastname,'varcorreo' => $email,'vardni' =>$dni,'varpassword' => $passwd]);
+        }
+        Flash::success("Se ha actualizado el profesor con dni: " .$dni);
         return redirect('rector/profesoresl');
     }  
     public function borrarP($dni){
@@ -248,9 +269,16 @@ class UsersController extends Controller
         $name = $request->input('name');
         $lastname = $request->input('lastname');
         $email = $request->input('email');
-        $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo 
+        $password = $request->input('password');
+        $passwd = bcrypt($password);
+        if($password == ''){
+            $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo 
             WHERE dni = :vardni',['varname' => $name,'varlastname' => $lastname,'varcorreo' => $email,'vardni' =>$dni]);
-        Flash::success("Se ha actualizado el rector con dni: " .$dni);
+        }else{
+            $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo, password = :varpassword 
+            WHERE dni = :vardni',['varname' => $name,'varlastname' => $lastname,'varcorreo' => $email,'vardni' =>$dni,'varpassword' => $passwd]);
+        }
+        Flash::success("Se ha actualizado el profesor con dni: " .$dni);
         return redirect('secretario/profesoresl');
     }  
     public function verAS($dni){
@@ -295,9 +323,16 @@ class UsersController extends Controller
         $name = $request->input('name');
         $lastname = $request->input('lastname');
         $email = $request->input('email');
-        $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo 
+        $password = $request->input('password');
+        $passwd = bcrypt($password);
+        if($password == ''){
+            $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo 
             WHERE dni = :vardni',['varname' => $name,'varlastname' => $lastname,'varcorreo' => $email,'vardni' =>$dni]);
-        Flash::success("Se ha actualizado el rector con dni: " .$dni);
+        }else{
+            $actualizar = DB::UPDATE('UPDATE Users set name = :varname, lastname = :varlastname, email = :varcorreo, password = :varpassword 
+            WHERE dni = :vardni',['varname' => $name,'varlastname' => $lastname,'varcorreo' => $email,'vardni' =>$dni,'varpassword' => $passwd]);
+        }
+        Flash::success("Se ha actualizado el alumno con dni: " .$dni);
         return redirect('secretario/alumnosl');
     }  
     public function borrarAS($dni){

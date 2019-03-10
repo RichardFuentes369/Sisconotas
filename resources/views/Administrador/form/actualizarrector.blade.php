@@ -39,7 +39,7 @@
 							{{ Form::label('name','Correo', array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" class="form-control" name="email" id="email" value="{{ $existe->email }}"><br>
+							<input type="text" class="form-control" name="email" readonly id="email" value="{{ $existe->email }}"><br>
 						</div>
 					</div>
 				</div>

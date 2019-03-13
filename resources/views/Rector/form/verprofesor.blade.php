@@ -9,7 +9,7 @@
 							{{ Form::label('name','Nombres',array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" readonly class="form-control" id="razon" value="{{ $existe->name }}"><br>
+							<input type="text" readonly class="form-control static" id="razon" value="{{ $existe->name }}"><br>
 						</div>
 					</div>
 				</div>
@@ -19,7 +19,7 @@
 							{{ Form::label('name','Apellidos',array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" readonly class="form-control" id="razon" value="{{ $existe->lastname }}"><br>
+							<input type="text" readonly class="form-control static" id="razon" value="{{ $existe->lastname }}"><br>
 						</div>
 					</div>
 				</div>
@@ -29,7 +29,7 @@
 							{{ Form::label('name','Correo',array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" readonly class="form-control" id="razon" value="{{ $existe->email }}"><br>
+							<input type="text" readonly class="form-control static" id="razon" value="{{ $existe->email }}"><br>
 						</div>
 					</div>
 				</div>
@@ -39,7 +39,7 @@
 							{{ Form::label('name','Fecha Nacimiento',array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" readonly class="form-control" id="razon" value="{{ $existe->birthdate }}"><br>
+							<input type="text" readonly class="form-control static" id="razon" value="{{ $existe->birthdate }}"><br>
 						</div>
 					</div>
 				</div>
@@ -49,7 +49,7 @@
 							{{ Form::label('name','Sexo',array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" readonly class="form-control" id="razon" value="{{ $existe->sexo }}"><br>
+							<input type="text" readonly class="form-control static" id="razon" value="{{ $existe->sexo }}"><br>
 						</div>
 					</div>
 				</div>
@@ -59,7 +59,7 @@
 							{{ Form::label('name','Telefono',array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" readonly class="form-control" id="razon" value="{{ $existe->phone }}"><br>
+							<input type="text" readonly class="form-control static" id="razon" value="{{ $existe->phone }}"><br>
 						</div>
 					</div>
 				</div>
@@ -69,7 +69,7 @@
 							{{ Form::label('name','Celular',array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" readonly class="form-control" id="razon" value="{{ $existe->cellphone }}"><br>
+							<input type="text" readonly class="form-control static" id="razon" value="{{ $existe->cellphone }}"><br>
 						</div>
 					</div>
 				</div>

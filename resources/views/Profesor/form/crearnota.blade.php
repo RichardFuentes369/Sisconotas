@@ -38,7 +38,7 @@
 						<div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">Primer Periodo</span>
 						</div>
-						{{ Form::number('text',null,['class' => 'form-control', 'type' => 'name', 'placeholder' => 'Ingrese el valor del primer periodo', 'name' => 'nota1','required']) }}
+						{{ Form::number('text',null,['class' => 'form-control', 'type' => 'name', 'placeholder' => 'Ingrese el valor del primer periodo', 'name' => 'nota1','required', 'min' => '0', 'max' => '5', 'step' => '0.1']) }}
 					</div> 
 				</div>
 			</div>

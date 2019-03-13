@@ -9,7 +9,7 @@
 						<div class="input-group-prepend">
 						    <span class="input-group-text" id="basic-addon1">Materia</span>
 						  </div>
-					    <select id="id" name="id" class="custom-select" onchange="return buscar(this.value);">
+					    <select multiple="" id="id" name="id" class="custom-select" onchange="return buscar(this.value);">
 							<option value="0" selected>Seleccióne</option>
 							@foreach($listarmaterias as $listar)
 								<option value="{{ $listar -> nombre_materia }}">{{ $listar -> nombre_materia }}</option>

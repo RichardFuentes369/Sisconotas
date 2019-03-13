@@ -9,7 +9,7 @@
 							{{ Form::label('name','Razon Social', array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" readonly class="form-control" id="razon" value="{{ $existe->razon_social }}"><br>
+							<input type="text" readonly class="form-control static" id="razon" value="{{ $existe->razon_social }}"><br>
 						</div>
 					</div>
 				</div>
@@ -19,7 +19,7 @@
 							{{ Form::label('name','Pais', array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" readonly class="form-control" id="razon" value="{{ $existe->pais }}"><br>
+							<input type="text" readonly class="form-control static" id="razon" value="{{ $existe->pais }}"><br>
 						</div>
 					</div>
 				</div>
@@ -29,7 +29,7 @@
 							{{ Form::label('name','Departamento', array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" readonly class="form-control" id="razon" value="{{ $existe->departamento }}"><br>
+							<input type="text" readonly class="form-control static" id="razon" value="{{ $existe->departamento }}"><br>
 						</div>
 					</div>
 				</div>
@@ -39,7 +39,7 @@
 							{{ Form::label('name','Ciudad', array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" readonly class="form-control" id="razon" value="{{ $existe->ciudad }}"><br>
+							<input type="text" readonly class="form-control static" id="razon" value="{{ $existe->ciudad }}"><br>
 						</div>
 					</div>
 				</div>
@@ -49,7 +49,7 @@
 							{{ Form::label('name','Barrio', array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" readonly class="form-control" id="razon" value="{{ $existe->barrio }}"><br>
+							<input type="text" readonly class="form-control static" id="razon" value="{{ $existe->barrio }}"><br>
 						</div>
 					</div>
 				</div>
@@ -59,7 +59,7 @@
 							{{ Form::label('name','Dirección', array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" readonly class="form-control" id="razon" value="{{ $existe->direccion }}"><br>
+							<input type="text" readonly class="form-control static" id="razon" value="{{ $existe->direccion }}"><br>
 						</div>
 					</div>
 				</div>
@@ -69,7 +69,7 @@
 							{{ Form::label('name','Telefono', array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" readonly class="form-control" id="razon" value="{{ $existe->telefono }}"><br>
+							<input type="text" readonly class="form-control static" id="razon" value="{{ $existe->telefono }}"><br>
 						</div>
 					</div>
 				</div>
@@ -79,7 +79,7 @@
 							{{ Form::label('name','Correo', array('class' => 'input-group-prepend', 'style' => 'font-weight: 900;background-color:white;color:black;padding-top: 6px;')) }} <br>
 						</div>
 						<div class="col-sm-8">
-							<input type="text" readonly class="form-control" id="razon" value="{{ $existe->correo }}"><br>
+							<input type="text" readonly class="form-control static" id="razon" value="{{ $existe->correo }}"><br>
 						</div>
 					</div>
 				</div>

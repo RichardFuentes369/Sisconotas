@@ -14,7 +14,7 @@ class MateriasController extends Controller
     /*Listar materias*/
     public function listarMS(){
     	$var = Auth::user()->colegios->id; 
-        $materias = Materias::orderBy('id','ASC')->where('colegio_id','=', $var)->paginate(100);
+        $materias = Materias::orderBy('id','ASC')->where('colegio_id','=', $var)->paginate(5);
         return view('Secretario.views.materias')->with('materias',$materias);
     }
     /*registrar materia*/

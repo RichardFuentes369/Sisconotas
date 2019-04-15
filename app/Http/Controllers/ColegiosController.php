@@ -18,12 +18,12 @@ class ColegiosController extends Controller
     /*----------------------------------ADMINISTRADOR---------------------------------------------------*/
     /*Listar todos los colegios*/
     public function listarC(){
-        $colegios = Colegios::orderBy('id','ASC')->where('id','>','0')->paginate(10);
+        $colegios = Colegios::orderBy('id','ASC')->where('id','>','1')->paginate(10);
         return view('Administrador.views.colegios')->with('colegios',$colegios);
     }
     /*Listar todos los rectores*/
     public function listarR(){
-        $colegios = Colegios::orderBy('id','ASC')->where('id','>','0')->paginate(100);
+        $colegios = Colegios::orderBy('id','ASC')->where('id','>','1')->paginate(100);
         $rectores = User::orderBy('id','ASC')->where('category', 'rector')->paginate(10);
         return view('Administrador.views.rectores')->with('colegios',$colegios)->with('rectores',$rectores);
     }

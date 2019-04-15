@@ -23,7 +23,7 @@ class UsersSeeder extends Seeder
             'category' => 'administrador',
     		    'phone'	=> '6387596',
     		    'cellphone'	=> '3226589746',
-            'colegio_id' => 0,
+            'colegio_id' => 1,
     		]);
 
         $user1->save();
@@ -39,7 +39,7 @@ class UsersSeeder extends Seeder
            'category' => 'rector',
            'phone' => '6387452',
            'cellphone' => '3209687854',
-           'colegio_id' => 1,
+           'colegio_id' => 2,
            ]);
 
         $user2->save();
@@ -55,7 +55,7 @@ class UsersSeeder extends Seeder
            'category' => 'secretario',
            'phone' => '6578423',
            'cellphone' => '3112548761',
-           'colegio_id' => 1,
+           'colegio_id' => 2,
            ]);
 
         $user3->save();
@@ -71,7 +71,7 @@ class UsersSeeder extends Seeder
             'category' => 'profesor',
             'phone' => '6588799',
             'cellphone' => '3168574889',
-            'colegio_id' => 1,
+            'colegio_id' => 2,
             ]);
 
         $user4->save();
@@ -87,7 +87,7 @@ class UsersSeeder extends Seeder
             'category' => 'profesor',
             'phone' => '6588799',
             'cellphone' => '3168574889',
-            'colegio_id' => 1,
+            'colegio_id' => 2,
             ]);
 
         $user5->save();
@@ -103,7 +103,7 @@ class UsersSeeder extends Seeder
            'category' => 'alumno',
            'phone' => '6390852',
            'cellphone' => '3203687952',
-           'colegio_id' => 1,
+           'colegio_id' => 2,
            ]);
 
         $user6->save();
@@ -119,7 +119,7 @@ class UsersSeeder extends Seeder
            'category' => 'alumno',
            'phone' => '6390852',
            'cellphone' => '3203687952',
-           'colegio_id' => 1,
+           'colegio_id' => 2,
            ]);
 
         $user7->save();
@@ -135,7 +135,7 @@ class UsersSeeder extends Seeder
            'category' => 'alumno',
            'phone' => '6852200',
            'cellphone' => '3208756325',
-           'colegio_id' => 1,
+           'colegio_id' => 2,
            ]);
 
         $user8->save();
@@ -151,7 +151,7 @@ class UsersSeeder extends Seeder
            'category' => 'rector',
            'phone' => '6387452',
            'cellphone' => '3209687854',
-           'colegio_id' => 2,
+           'colegio_id' => 3,
            ]);
 
         $user9->save();
@@ -167,7 +167,7 @@ class UsersSeeder extends Seeder
            'category' => 'secretario',
            'phone' => '6578423',
            'cellphone' => '3112548761',
-           'colegio_id' => 2,
+           'colegio_id' => 3,
            ]);
 
         $user10->save();
@@ -183,7 +183,7 @@ class UsersSeeder extends Seeder
             'category' => 'profesor',
             'phone' => '6588799',
             'cellphone' => '3168574889',
-            'colegio_id' => 2,
+            'colegio_id' => 3,
             ]);
 
         $user11->save();
@@ -199,7 +199,7 @@ class UsersSeeder extends Seeder
             'category' => 'profesor',
             'phone' => '6588799',
             'cellphone' => '3168574889',
-            'colegio_id' => 2,
+            'colegio_id' => 3,
             ]);
 
         $user12->save();
@@ -215,7 +215,7 @@ class UsersSeeder extends Seeder
            'category' => 'alumno',
            'phone' => '6390852',
            'cellphone' => '3203687952',
-           'colegio_id' => 2,
+           'colegio_id' => 3,
            ]);
 
         $user13->save();
@@ -231,7 +231,7 @@ class UsersSeeder extends Seeder
            'category' => 'alumno',
            'phone' => '6390852',
            'cellphone' => '3203687952',
-           'colegio_id' => 2,
+           'colegio_id' => 3,
            ]);
 
         $user14->save();
@@ -247,7 +247,7 @@ class UsersSeeder extends Seeder
            'category' => 'alumno',
            'phone' => '6852200',
            'cellphone' => '3208756325',
-           'colegio_id' => 2,
+           'colegio_id' => 3,
            ]);
 
         $user15->save();

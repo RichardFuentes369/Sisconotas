@@ -24,7 +24,6 @@ class CreateColegiosTable extends Migration
             $table->string('pais');
             $table->string('telefono');
             $table->string('correo');
-            
             $table->timestamps();
         });
     }

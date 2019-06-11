@@ -44,7 +44,7 @@ class ColegiosController extends Controller
         $existe = DB::SELECT('SELECT * FROM Colegios WHERE correo = :varcorreo or nit = :varnit',['varcorreo' => $email, 'varnit' => $nit]);
         if($existe == false){
             $c = new Colegios();
-            if($ultimoid == null){
+            if($ultimo == null){
                 $c->id = 1;
             }else{
                 $c->id = $ultimoid+1;

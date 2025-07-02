@@ -18,7 +18,7 @@ class LoginController extends Controller
         ]);
 
         if(Auth::attempt($credentials)){
-            $consulta = DB::SELECT('SELECT category FROM Users WHERE email = :varemail',['varemail' => $credentials['email']]);
+            $consulta = DB::SELECT('SELECT category FROM users WHERE email = :varemail',['varemail' => $credentials['email']]);
             foreach ($consulta as $con){
                 if(($con->category) == 'administrador'){
                     return view('Administrador.views.index');

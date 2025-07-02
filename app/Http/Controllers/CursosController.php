@@ -17,11 +17,11 @@ class CursosController extends Controller
         $grupo = $request->input('grupo'); 
         $anho = $request->input('id_anho'); 
         $dni = $request->input('name');
-        $consulta_usuario = DB::SELECT('SELECT * FROM Users WHERE dni = :vardni',['vardni'=>$dni]);
+        $consulta_usuario = DB::SELECT('SELECT * FROM users WHERE dni = :vardni',['vardni'=>$dni]);
         foreach ($consulta_usuario as $c_u){
             $datos_usuario= [$c_u->name,$c_u->lastname,$c_u->dni];
         }
-        $consulta_grado = DB::SELECT('SELECT * FROM Grados');
+        $consulta_grado = DB::SELECT('SELECT * FROM grados');
         foreach ($consulta_grado as $c_g){
             $datos_grado = $c_g->id;
         }
@@ -41,13 +41,13 @@ class CursosController extends Controller
     }
     /*borrar cursos*/
     public function borrarCS($id){
-        $existe = DB::DELETE('DELETE FROM Grados WHERE id = :varid',['varid' => $id]);
+        $existe = DB::DELETE('DELETE FROM grados WHERE id = :varid',['varid' => $id]);
         Flash::error("Se ha eliminado el grado con id " . $id . " de forma correcta");
         return back();
     }
     /*Actualizar Profesor*/   
     public function profesorAM($id){
-        $existe = DB::SELECT('SELECT * FROM Grados WHERE id = :varid',['varid' => $id]);
+        $existe = DB::SELECT('SELECT * FROM grados WHERE id = :varid',['varid' => $id]);
         $profesores = User::orderBy('id','ASC')->where('category', 'profesor')->where('colegio_id', Auth::user()->colegios->id )->paginate(10);
         return view('Secretario.views.actualizarprofesorencargado')->with('existe',$existe)->with('profesores',$profesores)->with('id',$id);
     } 
@@ -55,7 +55,7 @@ class CursosController extends Controller
     public function actualizarAS(Request $request){
         $id = $request->input('idactualizar');
         $dni = $request->input('dni');
-        $consulta = DB::SELECT('SELECT * FROM Users WHERE dni = :varid',['varid' => $dni]);
+        $consulta = DB::SELECT('SELECT * FROM users WHERE dni = :varid',['varid' => $dni]);
         foreach ($consulta as $cons){
             $nombre=$cons->name;
             $apellido=$cons->lastname;

@@ -21,11 +21,11 @@ class MateriasController extends Controller
     public function registrarMS(Request $request){
         $colegioid = $request->input('idColegio');
         $nombre_materia = $request->input('materia');        
-        $ultimo = DB::SELECT('SELECT * FROM Materias order by id desc limit 1');
+        $ultimo = DB::SELECT('SELECT * FROM materias order by id desc limit 1');
         foreach ($ultimo as $ult){
             $ultimoid=$ult->id;
         }
-        $existe = DB::SELECT('SELECT * FROM Materias WHERE colegio_id = :varid and nombre_materia = :varnombre',['varid' => $colegioid, 'varnombre' => $nombre_materia]);
+        $existe = DB::SELECT('SELECT * FROM materias WHERE colegio_id = :varid and nombre_materia = :varnombre',['varid' => $colegioid, 'varnombre' => $nombre_materia]);
         if($existe == false){
             $m = new Materias();
             if($ultimo == null){
@@ -46,7 +46,7 @@ class MateriasController extends Controller
     /*Eliminar materia*/
     public function borrarMS($id){
         /*Consultas BD*/
-        $existe = DB::DELETE('DELETE FROM Materias WHERE id = :varid',['varid' => $id]);
+        $existe = DB::DELETE('DELETE FROM materias WHERE id = :varid',['varid' => $id]);
 
         Flash::error("Se ha eliminado la materia con id: " . $id . " de forma correcta");
         return redirect('secretario/materiasl');

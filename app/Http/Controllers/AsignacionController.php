@@ -19,7 +19,7 @@ class AsignacionController extends Controller
     	$var = Auth::user()->colegios->id;
     	$var2 = "alumno";
     	$listagrupo = DB::SELECT('SELECT * FROM l_alumnos WHERE grado_id = :varid',['varid' => $id]);
-    	$listaralumnos = DB::SELECT('SELECT * FROM Users WHERE colegio_id = :varcolegio and category = :varcategoria',['varcolegio' => $var, 'varcategoria' => $var2]);
+    	$listaralumnos = DB::SELECT('SELECT * FROM users WHERE colegio_id = :varcolegio and category = :varcategoria',['varcolegio' => $var, 'varcategoria' => $var2]);
         return view('Secretario.views.listaalumnos',compact('anho','grupo','id'))->with('listagrupo',$listagrupo)->with('listaralumnos',$listaralumnos);
     }
     /**Insertar alumno**/
@@ -58,7 +58,7 @@ class AsignacionController extends Controller
     /**Listar materias propias del colegio x**/
     public function listarMS($anho,$grupo,$id){
         $var = Auth::user()->colegios->id;
-        $listarmaterias = DB::SELECT('SELECT * FROM Materias WHERE colegio_id = :varid',['varid' => $var]);
+        $listarmaterias = DB::SELECT('SELECT * FROM materias WHERE colegio_id = :varid',['varid' => $var]);
         $mismaterias = DB::SELECT('SELECT * FROM l_materias WHERE  grado_id = :varid',['varid' => $id ]);
         return view('Secretario.views.listamaterias',compact('anho','grupo','id'))->with('listarmaterias',$listarmaterias)->with('mismaterias',$mismaterias);
     }

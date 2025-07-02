@@ -30,18 +30,18 @@ class ColegiosController extends Controller
     /*ver colegio*/
     public function verC($nit){
         /*consulta*/
-        $existe = DB::SELECT('SELECT * FROM Colegios WHERE nit = :varnit',['varnit' => $nit]);
+        $existe = DB::SELECT('SELECT * FROM colegios WHERE nit = :varnit',['varnit' => $nit]);
         return view('Administrador.views.vercolegio',compact('existe'));
     }
     /*Registrar colegios*/
     public function registrarC(Request $request){
         $nit = $request->input('nit'); 
         $email = $request->input('correo');
-        $ultimo = DB::SELECT('SELECT * FROM Colegios order by id desc limit 1');
+        $ultimo = DB::SELECT('SELECT * FROM colegios order by id desc limit 1');
         foreach ($ultimo as $ult){
             $ultimoid=$ult->id;
         }
-        $existe = DB::SELECT('SELECT * FROM Colegios WHERE correo = :varcorreo or nit = :varnit',['varcorreo' => $email, 'varnit' => $nit]);
+        $existe = DB::SELECT('SELECT * FROM colegios WHERE correo = :varcorreo or nit = :varnit',['varcorreo' => $email, 'varnit' => $nit]);
         if($existe == false){
             $c = new Colegios();
             if($ultimo == null){
@@ -68,7 +68,7 @@ class ColegiosController extends Controller
     }
     /*Actualizar colegios*/
     public function colegioA($nit){
-        $existe = DB::SELECT('SELECT * FROM Colegios WHERE nit = :varnit',['varnit' => $nit]);
+        $existe = DB::SELECT('SELECT * FROM colegios WHERE nit = :varnit',['varnit' => $nit]);
         return view('Administrador.views.actualizarcolegio')->with('existe',$existe);
     }
     public function actualizarC(Request $request){
@@ -78,14 +78,14 @@ class ColegiosController extends Controller
         $barrio = $request->input('barrio');
         $telefono = $request->input('telefono');
         $correo = $request->input('correo');
-        $actualizar = DB::UPDATE('UPDATE Colegios set razon_social = :varrazon, 
+        $actualizar = DB::UPDATE('UPDATE colegios set razon_social = :varrazon, 
             direccion = :vardireccion, barrio = :varbarrio, correo = :varcorreo, telefono = :vartelefono WHERE nit = :varnit',['varrazon' => $razon_social,'vardireccion' => $direccion,'varbarrio' =>$barrio ,'varcorreo' => $correo,'vartelefono' => $telefono,'varnit' => $nit]);
         Flash::success("Se ha actualizado el colegio con nit: " .$nit);
         return redirect('administrador/colegiosl');
     }
     /*Eliminar colegios*/
     public function borrarC($nit){
-        $existe = DB::DELETE('DELETE FROM Colegios WHERE nit = :varnit',['varnit' => $nit]);
+        $existe = DB::DELETE('DELETE FROM colegios WHERE nit = :varnit',['varnit' => $nit]);
         Flash::error("Se ha eliminado el colegio con nit: " . $nit . " de forma correcta");
         return redirect('administrador/colegiosl');
     }

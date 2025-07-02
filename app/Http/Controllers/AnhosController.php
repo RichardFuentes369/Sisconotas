@@ -15,17 +15,17 @@ class AnhosController extends Controller
     /**----------------------------------SECRETARIA---------------------------------------------------**/
     /*ver anhos*/
     public function verAS($id){
-    	$existe = DB::SELECT('SELECT * FROM Anhos WHERE id = :varid',['varid' => $id]);
+    	$existe = DB::SELECT('SELECT * FROM anhos WHERE id = :varid',['varid' => $id]);
         return view('Secretario.views.veranho',compact('existe'));
     }
 	/*registrar anhos*/
     public function registrarAS(Request $request){
         $anho = $request->input('anho'); 
-        $ultimo = DB::SELECT('SELECT * FROM Anhos order by id desc limit 1');
+        $ultimo = DB::SELECT('SELECT * FROM anhos order by id desc limit 1');
         foreach ($ultimo as $ult){
             $ultimoid=$ult->id;
         }
-        $existe = DB::SELECT('SELECT * FROM Anhos WHERE colegio_id = :varcolegioid and anho = :varanho',['varcolegioid' => Auth::user()->colegio_id, 'varanho' => $anho]);
+        $existe = DB::SELECT('SELECT * FROM anhos WHERE colegio_id = :varcolegioid and anho = :varanho',['varcolegioid' => Auth::user()->colegio_id, 'varanho' => $anho]);
         if($existe == false){
             $a = new Anhos();
             if($ultimo == null){
@@ -61,7 +61,7 @@ class AnhosController extends Controller
     }   
     /*Actualizar Fecha corte anhos*/
     public function fechacorteAS($id,$anho){
-        $existe = DB::SELECT('SELECT * FROM Anhos WHERE id = :varid and anho = :varanho',['varid' => $id, 'varanho' => $anho]);
+        $existe = DB::SELECT('SELECT * FROM anhos WHERE id = :varid and anho = :varanho',['varid' => $id, 'varanho' => $anho]);
         return view('Secretario.views.actualizarfecha',compact('id'))->with('existe',$existe);
     }
     /*Actualizando Fecha*/
@@ -89,7 +89,7 @@ class AnhosController extends Controller
     }
     /*borrar anhos*/
     public function borrarAS($id){
-    	$existe = DB::DELETE('DELETE FROM Anhos WHERE id = :varid',['varid' => $id]);
+    	$existe = DB::DELETE('DELETE FROM anhos WHERE id = :varid',['varid' => $id]);
         Flash::error("Se ha eliminado el año con id " . $id . " de forma correcta");
         return redirect('secretario/anhosl');
     }
